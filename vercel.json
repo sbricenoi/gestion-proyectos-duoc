@@ -1,6 +1,10 @@
 {
   "version": 2,
   "public": true,
-  "buildCommand": "mkdir -p public && cp -r 'Semana 3/web/'* public/",
-  "outputDirectory": "public"
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/Semana%203/web/$1"
+    }
+  ]
 }
