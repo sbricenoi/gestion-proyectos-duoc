@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/Semana 3/web/index.html"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/Semana 3/web/:path*"
+    }
+  ]
+}
