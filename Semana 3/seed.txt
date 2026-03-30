@@ -1,0 +1,103 @@
+Gestión de Proyectos de Software (GPY2202)
+
+
+Instrucciones de la plataforma
+
+Descripción de la actividad
+En esta tercera semana realizarán una actividad sumativa grupal, tendrá dos partes. Para la primera parte, a través de un encargo llamado "Planificando requerimientos del proyecto" en donde desarrollarán la primera entrega del proyecto, que incluye: Acta de Proyecto, Alcance del Proyecto, Matriz de Trazabilidad, EDT y Cronograma del Proyecto. Como parte II, tendrán que presentar esta primera parte del proyecto con un video. 
+
+Instrucciones específicas
+Parte I: Entrega del proyecto
+1.	Leer el caso: discuta y comprenda el caso entregado en detalle.
+2.	Descargar las plantillas: acceda a las plantillas de Acta de Constitución del Proyecto, Enunciado del Alcance del Proyecto, Documentación de Requisitos, Matriz de Trazabilidad, EDT y Cronograma del Proyecto. Todas las podrás encontrar en las instrucciones de la plataforma.
+3.	Completar las planillas: utilicen la información del caso entregado para completar cada sección de la planilla.
+4.	Revisar y ajustar: asegúrese de que toda la información es coherente y relevante. 
+5.	Revisar las planillas para asegurarse de que no falta nada.
+6.	Una vez tengas los documentos de la actividad desarrollados, recuerda guardarlos en un ZIP y subirlos en el AVA.
+
+
+
+Caso de negocio 
+La empresa del rubro de telecomunicaciones llamada “Konecta”, planea llevar a cabo el proyecto de desarrollo de la intranet corporativa 2.0, donde la idea es que puedan tener acceso a ella todos los empleados de la compañía, los cuáles se encuentran distribuidos de la siguiente forma:   
+•	1.500 empleados en Chile.  
+•	300 en Argentina.  
+•	500 en Brasil.  
+•	400 en Colombia.  
+La anterior intranet corporativa no era muy usada por los empleados que estaban fuera de Chile, ya que la información que esta contenía no era aplicable a las otras sucursales en América Latina. 
+El principal objetivo de esta nueva intranet es que todos los empleados puedan obtener información relativa a su región e información corporativa, que estén disponibles ciertas transacciones internas (como solicitud de vacaciones, obtener liquidaciones de sueldo, entre otras) y que sea el único canal de comunicación corporativa. Uno de los principales objetivos del sponsor del proyecto (el director general de la organización), es que la intranet sea un sitio útil y de vital importancia para el 100% de los empleados de la empresa.  
+El presupuesto del proyecto será de $100.000.000 y el tiempo estimado para el desarrollo y puesta en marcha es de 5 meses. 
+
+
+
+
+Acta de proyecto
+Recuerda descargar este formato de respuesta de la planilla en la introducción de la semana y guárdalo en el ZIP con la siguiente nomenclatura:
+GPY2202_Exp1_S3_acta_de_constitucion_grupoX
+
+Completar la planilla: Utilicen la información del caso entregado para completar cada sección de la planilla:
+o	Información del proyecto: ID, nombre, fecha de inicio, jefe de proyecto, área responsable del proyecto.
+o	Objetivos del proyecto: ¿Qué pretendemos lograr con este proyecto? (por ejemplo, aumentar la conciencia sobre la salud, mejorar la actividad física, etc.)
+o	Resumen ejecutivo: Es una descripción concisa que resume los aspectos clave del proyecto, como el propósito, los objetivos, el alcance, el presupuesto y el cronograma, proporcionando a los interesados una visión general rápida y clara del proyecto.
+o	Entregables del proyecto: Son los resultados tangibles o productos finales que se deben producir o entregar al completar el proyecto, cumpliendo con los requisitos establecidos y contribuyendo al logro de los objetivos de este. Representan los hitos importantes que marcan el progreso y el éxito del proyecto.
+o	Supuestos, restricciones y riesgos del proyecto: Los supuestos son condiciones o eventos que se consideran verdaderos, pero aún no se han confirmado, y pueden afectar el éxito del proyecto. Las restricciones son limitaciones impuestas al proyecto, como recursos, tiempo o presupuesto. Los riesgos son eventos inciertos que pueden tener un impacto negativo en el proyecto si ocurren, y deben ser gestionados para mitigar su impacto.
+o	Descripción del proyecto: Resumen del alcance del proyecto, características principales de la aplicación.
+
+o	Relaciones con los proveedores: Marcar la opción que corresponde, según el caso entregado.
+o	Hitos del proyecto: Son eventos significativos o puntos de referencia que marcan el progreso o logros clave en el proyecto. Sirven como puntos de control para evaluar el avance y asegurar que el proyecto se desarrolla según lo planificado.
+o	Estimación de tamaño: Costo, plazo y esfuerzo (en horas-hombre) total del proyecto. 
+o	Stakeholders principales: ¿Quiénes son las partes interesadas clave? (por ejemplo, usuarios finales, equipo de desarrollo, inversores)
+o	Criterios de aceptación: Definen claramente qué resultados o entregables deben alcanzarse para satisfacer los requisitos del proyecto. 
+Alcance del proyecto
+Para considerar este punto, deberán considerar dos documentos.
+1.	Requisitos: Respecto al documento de requisitos, la información a completar se detalla en su interior. 
+Recuerda descargar este formato de respuesta de la plantilla en la introducción de la semana y guarda el ZIP con la siguiente nomenclatura.
+GPY2202_Exp1_S3_requisitos_grupoX
+Completar la planilla: Utilicen la información del caso entregado para completar cada sección de la planilla Enunciado del Alcance:
+ 
+o	Información del proyecto: ID, nombre, fecha de inicio, jefe de proyecto, responsable del proyecto.
+o	Objetivos del proyecto: ¿Qué pretendemos lograr con este proyecto? (por ejemplo, aumentar la conciencia sobre la salud, mejorar la actividad física, etc.)
+o	Entregables del proyecto: Son los resultados tangibles o productos finales que se deben producir o entregar al completar el proyecto, cumpliendo con los requisitos establecidos y contribuyendo al logro de los objetivos de este. Representan los hitos importantes que marcan el progreso y el éxito del proyecto.
+o	Hitos del proyecto: Son eventos significativos o puntos de referencia que marcan el progreso o logros clave en el proyecto. Sirven como puntos de control para evaluar el avance y asegurar que el proyecto se desarrolla según lo planificado.
+o	Lo que no se incluirá en el proyecto.
+o	Supuestos, restricciones y riesgos del proyecto: Los supuestos son condiciones o eventos que se consideran verdaderos, pero aún no se han confirmado y pueden afectar el éxito del proyecto. Las restricciones son limitaciones impuestas al proyecto, como recursos, tiempo o presupuesto. Los riesgos son eventos inciertos que pueden tener un impacto negativo en el proyecto si ocurren, y deben ser gestionados para mitigar su impacto.
+2.	Enunciado del alcance
+Recuerda descargar este formato de respuesta de la planilla en la introducción de la semana y guárdalo en el ZIP con la siguiente nomenclatura:
+GPY2202_Exp1_S3_enunciado_del_alcance_grupoX
+ 
+Matriz de trazabilidad
+Respecto a la Matriz de Trazabilidad, la información a completar se detalla en su interior.
+Recuerda descargar este formato de respuesta de la planilla en la introducción de la semana y guárdalo en el ZIP con la siguiente nomenclatura:
+GPY2202_Exp1_S3_matriz_de_trazabilidad_grupoX
+EDT (Estructura de Desglose de Trabajo)
+Utilicen la información del caso entregado para completar cada sección de la planilla.
+Recuerda descargar este formato de respuesta de la planilla en la introducción de la semana y guárdalo en el ZIP con la siguiente nomenclatura:
+GPY2202_Exp1_S3_EDT_grupoX
+Cronograma del proyecto
+Pasos para crear una Carta Gantt:
+1.	Definir el Alcance del Proyecto
+o	Enumera todos los entregables principales y secundarios del proyecto.
+o	Desglosa cada entregable en tareas específicas.
+2.	Identificar tareas y subtareas
+o	Lista todas las tareas necesarias para completar el proyecto.
+o	Divide cada tarea en subtareas más manejables si es necesario.
+ 
+3.	Establecer secuencias y dependencias
+o	Determina el orden en que deben realizarse las tareas.
+o	Identifica las dependencias entre tareas (por ejemplo, una tarea no puede comenzar hasta que otra haya finalizado).
+4.	Asignar duraciones a las tareas
+o	Estima la cantidad de tiempo que tomará completar cada tarea.
+o	Considera los recursos disponibles y posibles restricciones.
+5.	Asignar recursos
+o	Asigna personas responsables y otros recursos necesarios para cada tarea.
+6.	Establecer fechas de inicio y fin
+o	Basado en las duraciones y dependencias, establece fechas de inicio y fin para cada tarea.
+o	Usa una herramienta de software para ayudarte con la programación (Microsoft Project, Project Libre, etc.)
+7.	Crear la carta Gantt
+o	Recuerda descargar este formato para crear la Carta Gantt a través del siguiente link: https://www.projectlibre.com/product/1-alternative-microsoft-project-free-project-management-software-open-source 
+o	Cada tarea se representa como una barra horizontal en una línea de tiempo.
+o	Las fechas de inicio y fin determinan la posición y la longitud de las barras.
+8.	Revisar y ajustar
+o	Revisa la carta Gantt con todos los interesados para asegurarte de que sea realista y esté completa.
+o	Haz ajustes según sea necesario antes de comenzar el proyecto.
+Recuerda descargar este formato de la planilla en el link y guárdalo en el ZIP con la siguiente nomenclatura:
+GPY2202_Exp1_S3_Carta_gantt_grupoX

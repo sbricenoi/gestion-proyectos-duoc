@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz de Trazabilidad de Requisitos | Proyecto Konecta - Grupo 15</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC" class="logo-img">
+                <span class="logo-text">Gestión de Proyectos</span>
+            </a>
+            <div class="project-info">
+                <div class="project-title">GPY2202 - Semana 3</div>
+                <div class="project-meta">Grupo 15 • Sebastian Briceño</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link ">🏠 Inicio</a>
+<a href="acta_constitucion.html" class="nav-link ">📋 Acta de Constitución</a>
+<a href="requisitos.html" class="nav-link ">📝 Requisitos</a>
+<a href="alcance.html" class="nav-link ">🎯 Alcance</a>
+<a href="matriz_trazabilidad.html" class="nav-link active">🔗 Matriz</a>
+<a href="edt.html" class="nav-link ">📊 EDT</a>
+<a href="gantt.html" class="nav-link ">📅 Carta Gantt</a>
+
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="document">
+            <h1>MATRIZ DE TRAZABILIDAD DE REQUISITOS</h1>
+
+<hr>
+
+<h2>INFORMACIÓN DEL PROYECTO</h2>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ID del Proyecto</strong></td>
+<td>KONECTA-INT-2024-001</td>
+</tr>
+<tr>
+<td><strong>Nombre del Proyecto</strong></td>
+<td>Desarrollo de Intranet Corporativa 2.0</td>
+</tr>
+<tr>
+<td><strong>Fecha de Documento</strong></td>
+<td>27 de Marzo de 2026</td>
+</tr>
+<tr>
+<td><strong>Jefe de Proyecto</strong></td>
+<td>Sebastian Briceño</td>
+</tr>
+<tr>
+<td><strong>Versión</strong></td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>---
+
+<h2>PROPÓSITO DE LA MATRIZ</h2>
+
+<p>Esta matriz de trazabilidad vincula los requisitos del proyecto con sus orígenes, entregables, casos de prueba y stakeholders responsables, asegurando que todos los requisitos sean gestionados, desarrollados, probados y aceptados apropiadamente.</p>
+
+<hr>
+
+<h2>MATRIZ DE TRAZABILIDAD</h2>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Sub-ID</th>
+<th>Descripción del Requisito</th>
+<th>Versión</th>
+<th>Estado Actual</th>
+<th>Última Fecha del Estado</th>
+<th>Criterios de Aceptación</th>
+<th>Stakeholder</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REQ-001</td>
+<td>RF-01</td>
+<td><strong>Gestión de Usuarios y Autenticación</strong>: Sistema de autenticación mediante Single Sign-On (SSO) integrado con Active Directory corporativo</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Los usuarios inician sesión con credenciales corporativas sin usuario/contraseña adicional<br>- Validación de roles y permisos correcta<br>- Soporte MFA opcional<br>- Cierre automático tras 30 min de inactividad</td>
+<td>Director de TI</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-002</td>
+<td>RF-02</td>
+<td><strong>Portal de Información Regionalizado</strong>: Visualización automática de contenido corporativo y específico según país del empleado (Chile, Argentina, Brasil, Colombia)</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Detección automática de país del usuario<br>- Visualización de noticias corporativas y regionales<br>- Políticas y beneficios específicos por país<br>- Calendario de eventos corporativos y regionales</td>
+<td>Dir. Comunicaciones</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-003</td>
+<td>RF-03.1</td>
+<td><strong>Solicitud de Vacaciones</strong>: Módulo para solicitar vacaciones con workflow de aprobación multinivel</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Formulario de solicitud funcional<br>- Visualización de saldo disponible<br>- Workflow de aprobación operativo<br>- Notificaciones de estado</td>
+<td>Director de RRHH</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-004</td>
+<td>RF-03.2</td>
+<td><strong>Descarga de Liquidaciones</strong>: Acceso a liquidaciones de sueldo de últimos 12 meses en formato PDF</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Descarga de liquidaciones en PDF<br>- Historial de 12 meses<br>- Seguridad: solo acceso al titular<br>- PDF encriptado</td>
+<td>Director de RRHH</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-005</td>
+<td>RF-03.3</td>
+<td><strong>Solicitud de Certificados</strong>: Generación automática de certificados laborales (antigüedad, renta, cotizaciones)</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Generación automática de certificados<br>- Formatos: antigüedad, renta, cotizaciones<br>- Descarga inmediata en PDF<br>- Marca de agua de seguridad</td>
+<td>Director de RRHH</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-006</td>
+<td>RF-03.4</td>
+<td><strong>Actualización de Datos Personales</strong>: Empleados pueden actualizar datos de contacto (teléfono, dirección, contacto de emergencia)</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Modificación de teléfono, dirección<br>- Actualización de contacto de emergencia<br>- Cambios se reflejan inmediatamente<br>- Notificación a RRHH de cambios</td>
+<td>Director de RRHH</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>REQ-007</td>
+<td>RF-03.5</td>
+<td><strong>Consulta de Evaluaciones</strong>: Acceso a historial de evaluaciones de desempeño del empleado</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Visualización de evaluaciones pasadas<br>- Historial completo del empleado<br>- Solo acceso del titular<br>- Formato legible (PDF o web)</td>
+<td>Director de RRHH</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>REQ-008</td>
+<td>RF-04</td>
+<td><strong>Sistema de Comunicación Interna</strong>: Canal único para noticias, anuncios, encuestas con segmentación de audiencias</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Publicación de noticias con categorización<br>- Notificaciones push operativas<br>- Comentarios y reacciones<br>- Encuestas funcionales</td>
+<td>Dir. Comunicaciones</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-009</td>
+<td>RF-05</td>
+<td><strong>Directorio Corporativo</strong>: Base de datos searchable de 2,700 empleados con perfiles y organigrama</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Búsqueda por nombre, área, ubicación, cargo<br>- Perfil con foto, contacto, jefe directo<br>- Organigrama interactivo<br>- Actualización en tiempo real con AD</td>
+<td>Director de TI</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-010</td>
+<td>RF-06</td>
+<td><strong>Gestión de Contenidos (CMS)</strong>: Panel administrativo para gestión de contenidos con workflow de aprobación</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Editor WYSIWYG funcional<br>- Workflow de aprobación operativo<br>- Programación de publicaciones<br>- Control de visibilidad por país/área</td>
+<td>Dir. Comunicaciones</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-011</td>
+<td>RF-07</td>
+<td><strong>Repositorio de Documentos</strong>: Biblioteca centralizada de documentos corporativos con búsqueda y control de versiones</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Navegación por categorías<br>- Búsqueda funcional<br>- Control de versiones operativo<br>- Permisos por roles</td>
+<td>Área Legal</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>REQ-012</td>
+<td>RF-08</td>
+<td><strong>Módulo de Soporte Técnico</strong>: Sistema de tickets para solicitudes de soporte con seguimiento de estado</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Creación de tickets funcional<br>- Seguimiento de estado<br>- Notificaciones automáticas<br>- Base de conocimientos</td>
+<td>Director de TI</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>REQ-013</td>
+<td>RF-09</td>
+<td><strong>Dashboard Personalizado</strong>: Página principal con información relevante para cada usuario (noticias, tareas pendientes, accesos rápidos)</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Dashboard personalizado por usuario<br>- Widgets configurables<br>- Información en tiempo real<br>- Accesos rápidos funcionales</td>
+<td>Director de TI</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-014</td>
+<td>RF-10</td>
+<td><strong>Soporte Multiidioma</strong>: Interfaz disponible en español y portugués con detección automática según país</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Interfaz completa en español y portugués<br>- Detección automática (Brasil=PT)<br>- Cambio manual de idioma<br>- Contenidos en ambos idiomas</td>
+<td>Dir. Comunicaciones</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-015</td>
+<td>RF-11</td>
+<td><strong>Diseño Responsive</strong>: Accesibilidad desde desktop, tablet y smartphone con funcionalidades core disponibles</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Adaptativo en desktop, tablet, móvil<br>- Funcionalidades core en todos los dispositivos<br>- Tiempos de carga optimizados<br>- Touch-friendly</td>
+<td>Diseñador UX/UI</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-016</td>
+<td>RNF-01</td>
+<td><strong>Rendimiento</strong>: Tiempo de carga inicial ≤3 seg, soporte 2,700 usuarios concurrentes, respuesta de transacciones ≤2 seg</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Carga página principal <3 seg<br>- 2,700 usuarios sin degradación<br>- Transacciones <2 seg<br>- Búsquedas <1 seg</td>
+<td>Director de TI</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-017</td>
+<td>RNF-02</td>
+<td><strong>Disponibilidad</strong>: Uptime del 99.5% con backups automáticos diarios</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Disponibilidad del 99.5%<br>- Ventanas de mantenimiento fuera de horario laboral<br>- Backups diarios con retención 30 días</td>
+<td>Director de TI</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-018</td>
+<td>RNF-03</td>
+<td><strong>Escalabilidad</strong>: Arquitectura preparada para 5,000 usuarios y 500 GB de almacenamiento</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Soporta hasta 5,000 usuarios<br>- Almacenamiento de 500 GB<br>- Escalamiento horizontal posible</td>
+<td>Director de TI</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-019</td>
+<td>RNF-04</td>
+<td><strong>Seguridad</strong>: HTTPS/TLS 1.3, integración con AD, RBAC, logs de auditoría, cumplimiento normativo 4 países</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Encriptación HTTPS/TLS 1.3<br>- Autenticación con AD<br>- RBAC implementado<br>- Auditoría operativa<br>- Cumplimiento legal</td>
+<td>Comité de Seguridad</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-020</td>
+<td>RNF-05</td>
+<td><strong>Usabilidad</strong>: Navegación intuitiva (máx 3 clics), curva de aprendizaje baja, cumplimiento WCAG 2.1 AA</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Tareas básicas sin capacitación<br>- Máximo 3 clics a funcionalidades<br>- Cumple WCAG 2.1 AA<br>- Mensajes de error claros</td>
+<td>Diseñador UX/UI</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-021</td>
+<td>RNF-06</td>
+<td><strong>Compatibilidad</strong>: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+ en Windows, macOS, iOS, Android</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Funciona en 4 navegadores principales<br>- Compatible con OS mencionados<br>- Resoluciones desde 320px</td>
+<td>Director de TI</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-022</td>
+<td>RNF-07</td>
+<td><strong>Mantenibilidad</strong>: Código documentado, arquitectura modular, logs estructurados, monitoreo en tiempo real</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Código comentado<br>- Arquitectura modular<br>- Logs para troubleshooting<br>- Dashboard de monitoreo</td>
+<td>Director de TI</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>REQ-023</td>
+<td>INT-01</td>
+<td><strong>Integración con Active Directory</strong>: Para autenticación SSO y sincronización de datos de empleados</td>
+<td>1.0</td>
+<td>Aprobado</td>
+<td>15-03-2026</td>
+<td>- Autenticación via AD exitosa<br>- Sincronización de usuarios automática<br>- Actualización en tiempo real<br>- Pruebas con 100 usuarios</td>
+<td>Director de TI</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-024</td>
+<td>INT-02</td>
+<td><strong>Integración con Sistema de RRHH</strong>: Para datos de empleados, vacaciones, evaluaciones</td>
+<td>1.0</td>
+<td>En Análisis</td>
+<td>20-03-2026</td>
+<td>- Consulta de saldo de vacaciones<br>- Envío de solicitudes de vacaciones<br>- Consulta de evaluaciones<br>- Sincronización bidireccional</td>
+<td>Director de RRHH</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-025</td>
+<td>INT-03</td>
+<td><strong>Integración con Sistema de Nómina</strong>: Para descarga de liquidaciones de sueldo</td>
+<td>1.0</td>
+<td>En Análisis</td>
+<td>20-03-2026</td>
+<td>- Descarga de liquidaciones exitosa<br>- Historial de 12 meses<br>- Formato PDF correcto<br>- Seguridad validada</td>
+<td>Director de RRHH</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-026</td>
+<td>CAL-01</td>
+<td><strong>Pruebas de Carga</strong>: Simulación de 3,000 usuarios concurrentes sin fallos</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Simulación de 3,000 usuarios<br>- Sin errores de sistema<br>- Tiempos de respuesta aceptables<br>- Identificación de cuellos de botella</td>
+<td>Líder de QA</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-027</td>
+<td>CAL-02</td>
+<td><strong>Pruebas de Seguridad</strong>: Auditoría de seguridad y pruebas de penetración sin vulnerabilidades críticas</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Auditoría completada<br>- Pruebas de penetración realizadas<br>- Sin vulnerabilidades críticas<br>- Reporte de seguridad aprobado</td>
+<td>Comité de Seguridad</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-028</td>
+<td>CAL-03</td>
+<td><strong>Pruebas de Usabilidad</strong>: Sesiones con usuarios reales, satisfacción mínima 4/5</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Sesiones con al menos 20 usuarios<br>- Usuarios de los 4 países<br>- Satisfacción ≥ 4/5<br>- Feedback documentado</td>
+<td>Diseñador UX/UI</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-029</td>
+<td>CAL-04</td>
+<td><strong>Pruebas de Integración</strong>: Validación de todas las integraciones con sistemas legacy operativas</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Todas las APIs operativas<br>- Datos sincronizados correctamente<br>- Manejo de errores validado<br>- Tiempos de respuesta aceptables</td>
+<td>Director de TI</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-030</td>
+<td>DOC-01</td>
+<td><strong>Documentación Técnica</strong>: Manual técnico, arquitectura, APIs, procedimientos de operación</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Manual técnico completo<br>- Documentación de arquitectura<br>- Documentación de APIs<br>- Procedimientos de troubleshooting</td>
+<td>Arquitecto SW</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>REQ-031</td>
+<td>DOC-02</td>
+<td><strong>Documentación de Usuario</strong>: Manual de usuario, guías rápidas, FAQs, videos tutoriales</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Manual de usuario en español y portugués<br>- 5 videos tutoriales<br>- Guías rápidas por módulo<br>- FAQs con 30+ preguntas</td>
+<td>Analista de Negocio</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>REQ-032</td>
+<td>CAP-01</td>
+<td><strong>Capacitación de Usuarios Finales</strong>: Capacitación de 2,700 empleados en uso de la intranet</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Sesiones en los 4 países<br>- 100% de usuarios clave capacitados<br>- Materiales entregados<br>- Asistencia mínima 80%</td>
+<td>Director de RRHH</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-033</td>
+<td>CAP-02</td>
+<td><strong>Capacitación de Administradores</strong>: Capacitación técnica para administradores de contenido y soporte TI</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Taller de 4 horas para admins contenido<br>- Taller de 8 horas para soporte TI<br>- Documentación entregada<br>- Evaluación post-capacitación aprobada</td>
+<td>Director de TI</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>REQ-034</td>
+<td>INF-01</td>
+<td><strong>Infraestructura de Producción</strong>: Ambiente cloud configurado con alta disponibilidad, backups y monitoreo</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Infraestructura en AWS o Azure<br>- Alta disponibilidad configurada<br>- Backups automáticos<br>- Monitoreo 24/7 operativo</td>
+<td>Director de TI</td>
+<td>Crítica</td>
+</tr>
+<tr>
+<td>REQ-035</td>
+<td>MIG-01</td>
+<td><strong>Plan de Go-Live</strong>: Estrategia de lanzamiento, migración de datos, plan de rollback</td>
+<td>1.0</td>
+<td>Pendiente</td>
+<td>-</td>
+<td>- Plan de go-live documentado<br>- Estrategia de migración definida<br>- Plan de rollback probado<br>- Comunicación a usuarios</td>
+<td>Jefe de Proyecto</td>
+<td>Crítica</td>
+</tr>
+</tbody>
+</table>---
+
+<h2>LEYENDA DE ESTADOS</h2>
+
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aprobado</strong></td>
+<td>Requisito validado y aprobado por stakeholders</td>
+</tr>
+<tr>
+<td><strong>En Análisis</strong></td>
+<td>Requisito en proceso de análisis técnico o de negocio</td>
+</tr>
+<tr>
+<td><strong>Pendiente</strong></td>
+<td>Requisito identificado pero aún no trabajado</td>
+</tr>
+<tr>
+<td><strong>En Desarrollo</strong></td>
+<td>Requisito en fase de implementación</td>
+</tr>
+<tr>
+<td><strong>En Pruebas</strong></td>
+<td>Requisito implementado, en fase de testing</td>
+</tr>
+<tr>
+<td><strong>Completado</strong></td>
+<td>Requisito implementado, probado y aceptado</td>
+</tr>
+<tr>
+<td><strong>Cancelado</strong></td>
+<td>Requisito descartado por cambio de alcance</td>
+</tr>
+</tbody>
+</table>---
+
+<h2>LEYENDA DE PRIORIDADES</h2>
+
+<table>
+<thead>
+<tr>
+<th>Prioridad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Crítica</strong></td>
+<td>Requisito indispensable sin el cual el sistema no puede funcionar. Bloquea go-live.</td>
+</tr>
+<tr>
+<td><strong>Alta</strong></td>
+<td>Requisito muy importante para el éxito del proyecto. Debe estar en go-live.</td>
+</tr>
+<tr>
+<td><strong>Media</strong></td>
+<td>Requisito importante pero puede postergarse a fase 2 si es necesario.</td>
+</tr>
+<tr>
+<td><strong>Baja</strong></td>
+<td>Requisito deseable, nice-to-have, puede postergarse sin impacto crítico.</td>
+</tr>
+</tbody>
+</table>---
+
+<h2>TRAZABILIDAD A ENTREGABLES</h2>
+
+<table>
+<thead>
+<tr>
+<th>ID Requisito</th>
+<th>Entregable Asociado</th>
+<th>Responsable</th>
+<th>Sprint / Fase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REQ-001</td>
+<td>E-09: Código Fuente - Sprint 1</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 1 (Semana 7)</td>
+</tr>
+<tr>
+<td>REQ-002</td>
+<td>E-09: Código Fuente - Sprint 1</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 1 (Semana 7)</td>
+</tr>
+<tr>
+<td>REQ-003</td>
+<td>E-10: Código Fuente - Sprint 2</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 2 (Semana 10)</td>
+</tr>
+<tr>
+<td>REQ-004</td>
+<td>E-10: Código Fuente - Sprint 2</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 2 (Semana 10)</td>
+</tr>
+<tr>
+<td>REQ-005</td>
+<td>E-10: Código Fuente - Sprint 2</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 2 (Semana 10)</td>
+</tr>
+<tr>
+<td>REQ-006</td>
+<td>E-10: Código Fuente - Sprint 2</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 2 (Semana 10)</td>
+</tr>
+<tr>
+<td>REQ-007</td>
+<td>E-10: Código Fuente - Sprint 2</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 2 (Semana 10)</td>
+</tr>
+<tr>
+<td>REQ-008</td>
+<td>E-10: Código Fuente - Sprint 2</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 2 (Semana 10)</td>
+</tr>
+<tr>
+<td>REQ-009</td>
+<td>E-11: Código Fuente - Sprint 3</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 3 (Semana 12)</td>
+</tr>
+<tr>
+<td>REQ-010</td>
+<td>E-11: Código Fuente - Sprint 3</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 3 (Semana 12)</td>
+</tr>
+<tr>
+<td>REQ-011</td>
+<td>E-11: Código Fuente - Sprint 3</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 3 (Semana 12)</td>
+</tr>
+<tr>
+<td>REQ-012</td>
+<td>E-11: Código Fuente - Sprint 3</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 3 (Semana 12)</td>
+</tr>
+<tr>
+<td>REQ-013</td>
+<td>E-09: Código Fuente - Sprint 1</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 1 (Semana 7)</td>
+</tr>
+<tr>
+<td>REQ-014</td>
+<td>E-09: Código Fuente - Sprint 1</td>
+<td>Equipo Desarrollo</td>
+<td>Sprint 1 (Semana 7)</td>
+</tr>
+<tr>
+<td>REQ-015</td>
+<td>E-07: Diseños UI/UX</td>
+<td>Diseñador UX/UI</td>
+<td>Diseño (Semana 4)</td>
+</tr>
+<tr>
+<td>REQ-016 a REQ-022</td>
+<td>E-06: Diseño de Arquitectura</td>
+<td>Arquitecto SW</td>
+<td>Diseño (Semana 4)</td>
+</tr>
+<tr>
+<td>REQ-023</td>
+<td>E-12: Integraciones Completadas</td>
+<td>Equipo Desarrollo</td>
+<td>Integraciones (Semana 13)</td>
+</tr>
+<tr>
+<td>REQ-024</td>
+<td>E-12: Integraciones Completadas</td>
+<td>Equipo Desarrollo</td>
+<td>Integraciones (Semana 13)</td>
+</tr>
+<tr>
+<td>REQ-025</td>
+<td>E-12: Integraciones Completadas</td>
+<td>Equipo Desarrollo</td>
+<td>Integraciones (Semana 13)</td>
+</tr>
+<tr>
+<td>REQ-026</td>
+<td>E-14: Informe de Pruebas</td>
+<td>Equipo QA</td>
+<td>Pruebas (Semana 14)</td>
+</tr>
+<tr>
+<td>REQ-027</td>
+<td>E-14: Informe de Pruebas</td>
+<td>Consultor Seguridad</td>
+<td>Pruebas (Semana 14)</td>
+</tr>
+<tr>
+<td>REQ-028</td>
+<td>E-14: Informe de Pruebas</td>
+<td>Equipo QA</td>
+<td>UAT (Semana 15)</td>
+</tr>
+<tr>
+<td>REQ-029</td>
+<td>E-14: Informe de Pruebas</td>
+<td>Equipo QA</td>
+<td>Pruebas (Semana 14)</td>
+</tr>
+<tr>
+<td>REQ-030</td>
+<td>E-16: Manual Técnico</td>
+<td>Arquitecto SW</td>
+<td>Documentación (Semana 17)</td>
+</tr>
+<tr>
+<td>REQ-031</td>
+<td>E-15: Manual de Usuario, E-17: Videos</td>
+<td>Analista de Negocio</td>
+<td>Documentación (Semana 16-17)</td>
+</tr>
+<tr>
+<td>REQ-032</td>
+<td>E-18: Plan de Capacitación Ejecutado</td>
+<td>RRHH</td>
+<td>Capacitación (Semana 18)</td>
+</tr>
+<tr>
+<td>REQ-033</td>
+<td>E-18: Plan de Capacitación Ejecutado</td>
+<td>TI</td>
+<td>Capacitación (Semana 18)</td>
+</tr>
+<tr>
+<td>REQ-034</td>
+<td>E-19: Ambiente de Producción</td>
+<td>DevOps</td>
+<td>Infraestructura (Semana 18)</td>
+</tr>
+<tr>
+<td>REQ-035</td>
+<td>E-20: Sistema en Producción</td>
+<td>Jefe de Proyecto</td>
+<td>Go-Live (Semana 19)</td>
+</tr>
+</tbody>
+</table>---
+
+<h2>APROBACIONES</h2>
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Rol</th>
+<th>Firma</th>
+<th>Fecha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sebastian Briceño</td>
+<td>Jefe de Proyecto</td>
+<td>_____________</td>
+<td>___/___/2026</td>
+</tr>
+<tr>
+<td>Sebastian Briceño</td>
+<td>Director de TI</td>
+<td>_____________</td>
+<td>___/___/2026</td>
+</tr>
+<tr>
+<td>Sebastian Briceño</td>
+<td>Director de RRHH</td>
+<td>_____________</td>
+<td>___/___/2026</td>
+</tr>
+</tbody>
+</table>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
+            <a href="index.html" class="btn btn-secondary">← Volver al Inicio</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>Gestión de Proyectos de Software (GPY2202)</strong></p>
+            <p>Semana 3: Planificando Requerimientos del Proyecto</p>
+            <p>Grupo 15 • Sebastian Briceño • Duoc UC • 2026</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Print button functionality
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>

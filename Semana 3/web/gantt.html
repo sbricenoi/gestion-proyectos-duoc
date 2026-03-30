@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Gantt - Proyecto Konecta | Grupo 15</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gantt.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC" class="logo-img">
+                <span class="logo-text">Gestión de Proyectos</span>
+            </a>
+            <div class="project-info">
+                <div class="project-title">GPY2202 - Semana 3</div>
+                <div class="project-meta">Grupo 15 • Sebastian Briceño</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link">🏠 Inicio</a>
+            <a href="acta_constitucion.html" class="nav-link">📋 Acta de Constitución</a>
+            <a href="requisitos.html" class="nav-link">📝 Requisitos</a>
+            <a href="alcance.html" class="nav-link">🎯 Alcance</a>
+            <a href="matriz_trazabilidad.html" class="nav-link">🔗 Matriz</a>
+            <a href="edt.html" class="nav-link">📊 EDT</a>
+            <a href="gantt.html" class="nav-link active">📅 Carta Gantt</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>📅 Carta Gantt Interactiva</h1>
+            <p>Cronograma visual del proyecto con 22 semanas, 10 fases principales y 11 hitos clave</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <div class="hero-meta-label">Inicio</div>
+                    <div class="hero-meta-value">01 Abril 2026</div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="hero-meta-label">Finalización</div>
+                    <div class="hero-meta-value">31 Agosto 2026</div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="hero-meta-label">Duración</div>
+                    <div class="hero-meta-value">22 semanas</div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="hero-meta-label">Fases</div>
+                    <div class="hero-meta-value">10 fases</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>💡 Instrucciones de Uso</h3>
+            <ul>
+                <li><strong>Expandir/Colapsar:</strong> Haz clic en las casillas de verificación (☑) junto a las fases para mostrar u ocultar sus tareas.</li>
+                <li><strong>Filtrar por categoría:</strong> Usa el selector para ver solo tareas de una categoría específica.</li>
+                <li><strong>Ruta crítica:</strong> Activa el filtro para ver solo las tareas críticas del proyecto.</li>
+                <li><strong>Hover:</strong> Pasa el mouse sobre las barras para ver detalles de cada tarea.</li>
+                <li><strong>Hitos:</strong> Los diamantes amarillos (◆) indican hitos importantes del proyecto.</li>
+                <li><strong>Progreso:</strong> La barra clara dentro de cada tarea muestra el % de avance.</li>
+                <li><strong>Exportar:</strong> Usa Ctrl/Cmd + P para imprimir o guardar como PDF.</li>
+            </ul>
+        </div>
+
+        <!-- Controles -->
+        <div class="gantt-controls">
+            <div class="control-group">
+                <label for="categoryFilter">Filtrar por Categoría</label>
+                <select id="categoryFilter" onchange="filterByCategory(this.value)">
+                    <option value="all">Todas las categorías</option>
+                    <option value="gestion">Gestión</option>
+                    <option value="analisis">Análisis y Requisitos</option>
+                    <option value="diseno">Diseño y Arquitectura</option>
+                    <option value="desarrollo">Desarrollo</option>
+                    <option value="pruebas">Pruebas y Calidad</option>
+                    <option value="infra">Infraestructura</option>
+                    <option value="docs">Documentación</option>
+                    <option value="capacitacion">Capacitación</option>
+                    <option value="integracion">Integraciones</option>
+                    <option value="transicion">Transición</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="criticalPathFilter" onchange="filterCriticalPath()">
+                    <label for="criticalPathFilter">Mostrar solo Ruta Crítica</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <button class="btn" onclick="renderGantt()">🔄 Actualizar Vista</button>
+            </div>
+
+            <div class="control-group">
+                <button class="btn btn-secondary" onclick="window.print()">🖨️ Exportar PDF</button>
+            </div>
+        </div>
+
+        <!-- Carta Gantt -->
+        <div class="gantt-wrapper">
+            <div id="gantt-container"></div>
+        </div>
+
+        <!-- Leyenda -->
+        <div class="gantt-legend">
+            <h3>📌 Leyenda de Colores</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FDB913;"></div>
+                    <div class="legend-label">Gestión</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #3498db;"></div>
+                    <div class="legend-label">Análisis</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9b59b6;"></div>
+                    <div class="legend-label">Diseño</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2ecc71;"></div>
+                    <div class="legend-label">Desarrollo</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #e74c3c;"></div>
+                    <div class="legend-label">Pruebas</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #34495e;"></div>
+                    <div class="legend-label">Infraestructura</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #16a085;"></div>
+                    <div class="legend-label">Documentación</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f39c12;"></div>
+                    <div class="legend-label">Capacitación</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #8e44ad;"></div>
+                    <div class="legend-label">Integraciones</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #c0392b;"></div>
+                    <div class="legend-label">Transición</div>
+                </div>
+            </div>
+            
+            <div class="legend-special">
+                <div class="legend-item" style="margin-bottom: 0.75rem;">
+                    <div class="critical-indicator"></div>
+                    <div class="legend-label">Tarea de Ruta Crítica (borde rojo)</div>
+                </div>
+                <div class="legend-item">
+                    <div class="milestone-indicator"></div>
+                    <div class="legend-label">Hito del Proyecto (◆)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estadísticas del Proyecto -->
+        <div class="gantt-stats">
+            <div class="stat-card">
+                <div class="stat-value">22</div>
+                <div class="stat-label">Semanas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">10</div>
+                <div class="stat-label">Fases Principales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">45+</div>
+                <div class="stat-label">Tareas Totales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">11</div>
+                <div class="stat-label">Hitos Clave</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">15</div>
+                <div class="stat-label">Tareas Críticas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">65%</div>
+                <div class="stat-label">Progreso Global</div>
+            </div>
+        </div>
+
+        <!-- Información Adicional -->
+        <div class="document">
+            <h2>📊 Análisis del Cronograma</h2>
+            
+            <h3>Ruta Crítica del Proyecto</h3>
+            <p>La ruta crítica está compuesta por las siguientes tareas clave que determinan la duración mínima del proyecto:</p>
+            <ul>
+                <li><strong>Sprint 1 - Módulos Core</strong> (Semanas 7-8): Base del sistema, autenticación y estructura</li>
+                <li><strong>Sprint 2 - RRHH y Comunicaciones</strong> (Semanas 8-10): Funcionalidades principales de autoservicio</li>
+                <li><strong>Sprint 3 - Directorio y CMS</strong> (Semanas 11-12): Sistema de gestión de contenidos</li>
+                <li><strong>Sprint 4 - Integraciones</strong> (Semanas 13-14): Conexión con sistemas legacy</li>
+                <li><strong>Pruebas No Funcionales</strong> (Semanas 13-14): Rendimiento, seguridad y compatibilidad</li>
+                <li><strong>Auditoría de Seguridad</strong> (Semana 14): Validación de seguridad externa</li>
+                <li><strong>Pruebas UAT</strong> (Semanas 15-16): Aceptación de usuarios piloto</li>
+                <li><strong>Capacitación</strong> (Semanas 17-18): Formación de 2,700 usuarios</li>
+                <li><strong>Go-Live</strong> (Semana 19): Puesta en producción del sistema</li>
+            </ul>
+
+            <h3>Hitos del Proyecto</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hito</th>
+                        <th>Semana</th>
+                        <th>Fecha</th>
+                        <th>Criterio de Aceptación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>H1: Inicio del Proyecto</strong></td>
+                        <td>1</td>
+                        <td>05/04/2026</td>
+                        <td>Equipo conformado, acta firmada, ambientes configurados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H2: Requisitos Aprobados</strong></td>
+                        <td>3</td>
+                        <td>19/04/2026</td>
+                        <td>Requisitos validados por stakeholders clave</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H3: Diseño Completado</strong></td>
+                        <td>4</td>
+                        <td>26/04/2026</td>
+                        <td>Arquitectura definida, diseños UI validados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H4: Sprint 1 Completado</strong></td>
+                        <td>7</td>
+                        <td>17/05/2026</td>
+                        <td>Autenticación, base y estructura funcionales</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H5: Sprint 2 Completado</strong></td>
+                        <td>10</td>
+                        <td>07/06/2026</td>
+                        <td>Módulos de RRHH y comunicaciones operativos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H6: Sprint 3 Completado</strong></td>
+                        <td>12</td>
+                        <td>21/06/2026</td>
+                        <td>Directorio, documentos y CMS finalizados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H7: Integraciones Operativas</strong></td>
+                        <td>13</td>
+                        <td>28/06/2026</td>
+                        <td>Todas las integraciones validadas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H8: Pruebas UAT Completadas</strong></td>
+                        <td>15</td>
+                        <td>12/07/2026</td>
+                        <td>Usuarios piloto validan exitosamente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H9: Capacitación Finalizada</strong></td>
+                        <td>17</td>
+                        <td>26/07/2026</td>
+                        <td>100% de usuarios clave capacitados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H10: Go-Live</strong></td>
+                        <td>19</td>
+                        <td>09/08/2026</td>
+                        <td>Sistema en producción disponible para todos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H11: Cierre del Proyecto</strong></td>
+                        <td>22</td>
+                        <td>31/08/2026</td>
+                        <td>Proyecto cerrado administrativamente</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Distribución de Esfuerzo por Fase</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fase</th>
+                        <th>Duración</th>
+                        <th>% del Proyecto</th>
+                        <th>Recursos Clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gestión del Proyecto</td>
+                        <td>22 semanas</td>
+                        <td>100% (transversal)</td>
+                        <td>Jefe de Proyecto</td>
+                    </tr>
+                    <tr>
+                        <td>Análisis y Requisitos</td>
+                        <td>3 semanas</td>
+                        <td>14%</td>
+                        <td>Analista de Negocio</td>
+                    </tr>
+                    <tr>
+                        <td>Diseño y Arquitectura</td>
+                        <td>2 semanas</td>
+                        <td>9%</td>
+                        <td>Arquitecto SW, Diseñador UX/UI</td>
+                    </tr>
+                    <tr>
+                        <td>Desarrollo</td>
+                        <td>9 semanas</td>
+                        <td>41%</td>
+                        <td>4 Desarrolladores Full-Stack</td>
+                    </tr>
+                    <tr>
+                        <td>Pruebas y Calidad</td>
+                        <td>9 semanas</td>
+                        <td>41%</td>
+                        <td>2 Analistas QA</td>
+                    </tr>
+                    <tr>
+                        <td>Infraestructura</td>
+                        <td>15 semanas</td>
+                        <td>68%</td>
+                        <td>Ingeniero DevOps</td>
+                    </tr>
+                    <tr>
+                        <td>Documentación</td>
+                        <td>3 semanas</td>
+                        <td>14%</td>
+                        <td>Analista de Negocio</td>
+                    </tr>
+                    <tr>
+                        <td>Capacitación</td>
+                        <td>4 semanas</td>
+                        <td>18%</td>
+                        <td>Equipo RRHH</td>
+                    </tr>
+                    <tr>
+                        <td>Integraciones</td>
+                        <td>5 semanas</td>
+                        <td>23%</td>
+                        <td>Líder Técnico</td>
+                    </tr>
+                    <tr>
+                        <td>Transición y Entrega</td>
+                        <td>4 semanas</td>
+                        <td>18%</td>
+                        <td>Todo el equipo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="edt.html" class="btn btn-secondary">← Ver EDT Completa</a>
+            <a href="index.html" class="btn">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>Gestión de Proyectos de Software (GPY2202)</strong></p>
+            <p>Semana 3: Planificando Requerimientos del Proyecto</p>
+            <p>Grupo 15 • Sebastian Briceño • Duoc UC • 2026</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- Scripts -->
+    <script src="js/gantt.js"></script>
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

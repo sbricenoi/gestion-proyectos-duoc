@@ -1,0 +1,104 @@
+Pauta de evaluación sumativa
+ 
+Planificando requerimientos del proyecto
+A continuación, se presentan los descriptores de los niveles de logro con los que serás retroalimentado/a y/o evaluado/a:
+CL	Completamente Logrado (100%)  	Logro completo del manejo del indicador, se considera como el punto óptimo, de acuerdo con el área evaluada, dentro del rango de competente
+L	Logrado (80%)	Logro del indicador, se observan pequeñas dificultades o errores para alcanzar el logro total y sobresaliendo de lo mínimo aceptable
+ML	Medianamente Logrado (60%)	Logro mínimo aceptable en el manejo del indicador que permite ser considerado competente
+LI	Logro Insuficiente (30%)	Logro insuficiente en el manejo del indicador, se observan varias dificultades o errores que no le permiten alcanzar el logro mínimo para ser considerado competente
+NL	No Logrado (0%)	Se observan un escaso, nulo o incorrecto logro en el manejo del indicador
+ 
+N°	Criterios	Completamente Logrado (100%)	Logrado (80%)	Medianamente Logrado (60%)	Logro Insuficiente
+(30%)	No Logrado
+(0%)
+1	Genera un Acta de Proyecto precisa y según el caso dado, completando los diez ítems, que son: objetivos del proyecto, resumen ejecutivo, entregables, supuestos, descripción del proyecto, relaciones con los proveedores, hitos del proyecto, estimación del tamaño, stakeholders principales y criterios de aceptación.
+(Valor 8 puntos)	Genera un Acta de Proyecto completa y precisa, siguiendo y completando todas las directrices e ítems del caso dado. 
+(Valor 8 puntos)	Genera un Acta de Proyecto adecuada, completando ocho de los diez ítems requeridos. (Valor 6,4 puntos)	Genera un Acta de Proyecto con omisiones, completando seis de los diez ítems requeridos.
+(Valor 4,8 puntos)	Genera un Acta de Proyecto incompleta, completando tres ítems de los diez requeridos. 
+(Valor 2,4 puntos)	No genera un Acta de Proyecto.
+(Valor 0 puntos)
+2	Identifica los requisitos del proyecto en la definición del alcance a presentar, reconociendo la necesidad del negocio, los requisitos funcionales, los requisitos no funcionales, los requisitos de calidad, los criterios de aceptación, las reglas del negocio, los impactos en otras áreas, impactos en otras entidades, requerimientos de soporte y entrenamiento, supuestos relativos a requisitos y restricciones relativas a requisitos.
+(Valor 8 puntos)	Identifica todos los requisitos del proyecto con precisión y detalle, completando los 11 ítems del documento.
+(Valor 8 puntos)	Identifica la mayoría de los requisitos, completando al menos ocho de los ítems requeridos con precisión.
+(Valor 6,4 puntos)	Identifica algunos requisitos, completando al menos seis de los ítems requeridos con algunos errores.
+(Valor 4,8 puntos)	Identifica pocos requisitos, completando al menos tres de los ítems requeridos y con numerosos errores.
+(Valor 2,4 puntos)	No identifica los requisitos del proyecto.
+(Valor 0 puntos)
+3	Crea un documento de enunciado del alcance, según los siguientes requerimientos identificados: objetivos estratégicos, objetivos y alcance del proyecto, entregables, hitos, lo que no incluirá el proyecto, supuestos, restricciones y riesgos. 
+(Valor 8 puntos)	Crea un documento de enunciado del alcance completo y preciso, siguiendo los ocho requerimientos identificados.
+(Valor 8 puntos)	Crea un documento adecuado, con errores menores, completando al menos seis de los requerimientos identificados.
+(Valor 6,4 puntos)	Crea un documento con errores u omisiones, completando al menos cuatro de los requerimientos identificados.
+(Valor 4,8 puntos)	Crea un documento incompleto y con errores, completando al menos dos de los requerimientos identificados.
+(Valor 2,4 puntos)	No crea un documento de enunciado del alcance.
+(Valor 0 puntos)
+4	Crea la matriz de trazabilidad de requisitos, a partir de los requerimientos identificados, que son: identificación, sub identificación, descripción del requisito, versión, estado actual, última fecha del estado registrado, criterios de aceptación, stakeholder y nivel de prioridad.
+(Valor 8 puntos)	Crea una matriz de trazabilidad de requisitos completa y precisa, cubriendo todos los requerimientos identificados.
+(Valor 8 puntos)	Crea una matriz adecuada, con errores menores, completando al menos 7 requisitos.
+(Valor 6,4 puntos)	Crea una matriz con varios errores u omisiones, completando al menos 5 requisitos.
+(Valor 4,8 puntos)	Crea una matriz incompleta y con numerosos errores, completando al menos 3 requisitos.
+(Valor 2,4 puntos)	No crea una matriz de trazabilidad de requisitos.
+(Valor 0 puntos)
+5	Identifica las tareas y subtareas del proyecto, que son la base de la EDT, y ordena las actividades de manera jerárquica en relación al caso.
+(Valor 8 puntos)	Identifica todas las tareas y subtareas del proyecto con precisión y detalle, y ordena las actividades de manera jerárquica.
+(Valor 8 puntos)	Identifica las tareas y subtareas, con errores en la jerarquización de las actividades.
+(Valor 6,4 puntos)	Identifica las tareas, con errores u omisiones en las y subtareas y en la jerarquización de las actividades. 
+(Valor 4,8 puntos)	Identifica con errores u omisiones las tareas y subtareas, sin ordenar correctamente las actividades.
+(Valor 2,4 puntos)	No identifica las tareas y subtareas del proyecto.
+(Valor 0 puntos)
+6	Genera una EDT, según un caso presentado, considerando: subdivisión de los entregables, subdivisión del trabajo del proyecto en componentes menores, organización y definición del alcance total del proyecto. 
+(Valor 8 puntos)	Genera una EDT completa y precisa, cumpliendo con todos (4) los elementos de manera correcta, dando respuesta al caso presentado.
+(Valor 8 puntos)	Genera una EDT adecuada, con algunos (3) de los elementos solicitados.
+(Valor 6,4 puntos)	Genera una EDT con 2 de los elementos solicitados. (Valor 4,8 puntos)	Genera una EDT incompleta con uno de los elementos solicitados. 
+(Valor 2,4 puntos)	No genera una EDT.
+(Valor 0 puntos)
+7	Desarrolla un cronograma a partir de un caso práctico presentado, siguiendo los pasos correspondientes que son: definir el alcance del proyecto, identificar tareas y subtareas, establecer secuencias y dependencias, asignar duraciones a las tareas, asignar recursos, establecer fechas de inicio y fin, crear la Carta Gantt, revisar y ajusta la carta.
+(Valor 8 puntos)	Desarrolla un cronograma completo y preciso, siguiendo el caso práctico presentado y completando todos los pasos para su construcción.
+(Valor 8 puntos)	Desarrolla un cronograma adecuado, con errores menores y completando al menos 6 de los pasos requeridos.
+(Valor 6,4 puntos)	Desarrolla un cronograma con errores u omisiones, completando al menos 4 de los pasos requeridos.
+(Valor 4,8 puntos)	Desarrolla un cronograma incompleto y con errores, completando al menos 2 pasos requeridos.
+(Valor 2,4 puntos)	No desarrolla un cronograma.
+(Valor 0 puntos)
+8	Define las actividades de un cronograma en correcta secuencia según caso práctico presentado, identificando las dependencias entre tareas.
+(Valor 8 puntos)	Define todas las actividades del cronograma en correcta secuencia, con precisión y en orden lógico.
+(Valor 8 puntos)	Define las actividades en correcta secuencia, con errores en la identificación de las dependencias
+(Valor 6,4 puntos)	Define las actividades, pero con errores u omisiones en la secuencia y en la identificación de las dependencias.
+(Valor 4,8 puntos)	Define las actividades, la secuencia y la identificación de las dependencias con errores u omisiones. 
+(Valor 2,4 puntos)	No define las actividades del cronograma en correcta secuencia y tampoco identifica las dependencias entre tareas.
+(Valor 0 puntos)
+9	Estima los recursos de las actividades del cronograma según caso práctico presentado, asignando las personas responsables y los recursos necesarios para cada tarea.
+(Valor 8 puntos)	Estima todos los recursos necesarios con precisión y detalle.
+(Valor 8 puntos)	Estima los recursos de las actividades asignando las personas responsables, con errores en los recursos para cada tarea.
+(Valor 6,4 puntos)	Estima los recursos con errores en la asignación de personas responsables y en los recursos necesarios para cada tarea.
+(Valor 4,8 puntos)	Estima los recursos con errores u omisiones en la asignación de personas responsables y en los recursos necesarios para cada tarea.
+(Valor 2,4 puntos)	No estima los recursos de las actividades del cronograma.
+(Valor 0 puntos)
+10	Estima la duración de las actividades de un cronograma según caso práctico presentado, considerando los recursos disponibles y posibles restricciones.
+(Valor 8 puntos)	Estima la duración de todas las actividades con precisión y detalle, considerando los recursos disponibles y posibles restricciones.
+(Valor 8 puntos)	Estima la duración de las actividades, pero con errores en la consideración de recursos disponibles y posibles restricciones.
+(Valor 6,4 puntos)	Estima con errores la duración de las actividades y también la consideración de recursos disponibles y posibles restricciones.
+(Valor 4,8 puntos)	Estima con errores u omisiones la duración de las actividades y también la consideración de recursos disponibles y posibles restricciones.
+(Valor 2,4 puntos)	No estima la duración de las actividades del cronograma.
+(Valor 0 puntos)
+11	Determina las herramientas y técnicas necesarias para realizar un cronograma en base a una situación planteada. Estas son: utilizar una herramienta de software específico, representar las tareas como una barra horizontal en una línea de tiempo, y las fechas de inicio y fin determinan la posición y la longitud de las barras. 
+(Valor 8 puntos)	Determina todas las herramientas y técnicas necesarias con precisión y detalle.
+(Valor 8 puntos)	Determina todas las herramientas y técnicas con errores menores.
+(Valor 6,4 puntos)	Determina al menos dos herramientas y técnicas para realizar un cronograma.
+(Valor 4,8 puntos)	Determina al menos una herramienta y técnica para realizar un cronograma.
+(Valor 2,4 puntos)	No determina las herramientas y técnicas necesarias para realizar un cronograma.
+(Valor 0 puntos)
+12	Demuestra dominio del tema que presenta, a partir de explicaciones detalladas y coherentes con el proyecto. 
+(Valor 6 puntos)	Demuestra un dominio completo del tema con explicaciones detalladas y coherentes que enriquecen el proyecto.
+(Valor 6 puntos)	Demuestra buen dominio del tema con explicaciones adecuadas y coherentes.
+(Valor 4,8 puntos)	Demuestra dominio parcial del tema, con explicaciones generales y a veces incoherentes.
+(Valor 3,6 puntos)	Demuestra poco dominio del tema, con explicaciones vagas y frecuentemente incoherentes. 
+(Valor 1,8 puntos)	No demuestra dominio del tema.
+(Valor 0 puntos)
+13	Expone su trabajo ajustándose a los criterios establecidos, que son: claridad y coherencia de la información, dominio del tema, uso adecuado del lenguaje técnico de la disciplina, uso de ppt (que complemente y refuerce la presentación) y ajustarse al tiempo asignado. 
+(Valor 6 puntos)	Expone su trabajo ajustándose y cumpliendo con todos los criterios establecidos. 
+(Valor 6 puntos)	Expone su trabajo cumpliendo con al menos cuatro de los criterios establecidos.
+(Valor 4,8 puntos)	Expone su trabajo cumpliendo con al menos tres de los criterios establecidos.
+(Valor 3,6 puntos)	Expone su trabajo cumpliendo con al menos dos de los criterios establecidos.
+(Valor 1,8 puntos)	Expone su trabajo sin ajustarse a los criterios establecidos.
+(Valor 0 puntos)
+
+

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación de Requisitos | Proyecto Konecta - Grupo 15</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC" class="logo-img">
+                <span class="logo-text">Gestión de Proyectos</span>
+            </a>
+            <div class="project-info">
+                <div class="project-title">GPY2202 - Semana 3</div>
+                <div class="project-meta">Grupo 15 • Sebastian Briceño</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link ">🏠 Inicio</a>
+<a href="acta_constitucion.html" class="nav-link ">📋 Acta de Constitución</a>
+<a href="requisitos.html" class="nav-link active">📝 Requisitos</a>
+<a href="alcance.html" class="nav-link ">🎯 Alcance</a>
+<a href="matriz_trazabilidad.html" class="nav-link ">🔗 Matriz</a>
+<a href="edt.html" class="nav-link ">📊 EDT</a>
+<a href="gantt.html" class="nav-link ">📅 Carta Gantt</a>
+
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="document">
+            <h1>DOCUMENTACIÓN DE REQUISITOS</h1>
+
+<hr>
+
+<h2>INFORMACIÓN DEL PROYECTO</h2>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ID del Proyecto</strong></td>
+<td>KONECTA-INT-2024-001</td>
+</tr>
+<tr>
+<td><strong>Nombre del Proyecto</strong></td>
+<td>Desarrollo de Intranet Corporativa 2.0</td>
+</tr>
+<tr>
+<td><strong>Fecha de Inicio</strong></td>
+<td>01 de Abril de 2026</td>
+</tr>
+<tr>
+<td><strong>Jefe de Proyecto</strong></td>
+<td>Sebastian Briceño</td>
+</tr>
+<tr>
+<td><strong>Responsable del Proyecto</strong></td>
+<td>Dirección de Tecnología e Innovación</td>
+</tr>
+</tbody>
+</table>---
+
+<h2>1. NECESIDAD DEL NEGOCIO</h2>
+
+<h3>Contexto</h3>
+<p>Konecta, empresa del rubro de telecomunicaciones con presencia en 4 países de América Latina (Chile, Argentina, Brasil y Colombia), cuenta con 2,700 empleados distribuidos de la siguiente manera:</p>
+<ul>
+<li><strong>Chile</strong>: 1,500 empleados</li>
+<li><strong>Argentina</strong>: 300 empleados</li>
+<li><strong>Brasil</strong>: 500 empleados</li>
+<li><strong>Colombia</strong>: 400 empleados</li>
+
+</ul>
+<h3>Problemática Actual</h3>
+<p>La intranet corporativa actual presenta las siguientes limitaciones:</p>
+<li><strong>Baja tasa de adopción</strong>: Los empleados fuera de Chile (1,200 empleados, 44% del total) no utilizan regularmente la intranet.</li>
+<li><strong>Contenido no regionalizado</strong>: La información disponible no es aplicable ni relevante para las sucursales fuera de Chile.</li>
+<li><strong>Falta de funcionalidades transaccionales</strong>: No permite realizar gestiones administrativas comunes (vacaciones, liquidaciones, certificados).</li>
+<li><strong>Múltiples canales de comunicación</strong>: No existe un canal único para comunicaciones corporativas, generando dispersión de información.</li>
+<li><strong>Ineficiencia operativa</strong>: Procesos manuales que podrían ser automatizados mediante autoservicio.</li>
+
+<h3>Necesidad Identificada</h3>
+<p>Se requiere desarrollar una nueva plataforma de intranet corporativa que:</p>
+<ul>
+<li>Sea relevante y útil para el 100% de los empleados, independiente de su ubicación geográfica.</li>
+<li>Centralice las comunicaciones corporativas en un único canal.</li>
+<li>Automatice transacciones administrativas internas.</li>
+<li>Mejore la eficiencia operativa y la cohesión organizacional.</li>
+<li>Proporcione información regionalizada según el país de cada empleado.</li>
+
+</ul>
+<h3>Justificación del Negocio</h3>
+<ul>
+<li><strong>ROI esperado</strong>: Reducción del 40% en tiempo dedicado a gestiones administrativas.</li>
+<li><strong>Mejora en comunicación interna</strong>: 100% de empleados informados en tiempo real.</li>
+<li><strong>Productividad</strong>: Ahorro estimado de 15 horas/mes por empleado en gestiones administrativas.</li>
+<li><strong>Cultura organizacional</strong>: Fortalecimiento del sentido de pertenencia en todas las regiones.</li>
+
+</ul>
+<hr>
+
+<h2>2. REQUISITOS FUNCIONALES</h2>
+
+<h3>RF-01: Gestión de Usuarios y Autenticación</h3>
+<strong>Descripción</strong>: El sistema debe proporcionar autenticación segura mediante Single Sign-On (SSO) integrado con Active Directory corporativo.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Los usuarios inician sesión con sus credenciales corporativas sin necesidad de usuario/contraseña adicional.</li>
+<li>El sistema valida roles y permisos según el perfil del usuario.</li>
+<li>Soporte para autenticación multifactor (MFA) opcional.</li>
+<li>Cierre de sesión automático tras 30 minutos de inactividad.</li>
+
+</ul>
+<hr>
+
+<h3>RF-02: Portal de Información Regionalizado</h3>
+<strong>Descripción</strong>: La intranet debe mostrar contenido corporativo global y contenido específico según el país del empleado.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Los empleados visualizan automáticamente contenido de su país (Chile, Argentina, Brasil o Colombia).</li>
+<li>Sección de noticias corporativas visible para todos.</li>
+<li>Sección de noticias locales filtrada por país.</li>
+<li>Políticas, procedimientos y beneficios específicos por región.</li>
+<li>Calendario de eventos corporativos y regionales.</li>
+
+</ul>
+<hr>
+
+<h3>RF-03: Autoservicio de Recursos Humanos</h3>
+<strong>Descripción</strong>: El sistema debe permitir a los empleados realizar transacciones de RRHH de forma autónoma.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li><strong>Solicitud de vacaciones</strong>: Formulario, flujo de aprobación multinivel, visualización de saldo.</li>
+<li><strong>Descarga de liquidaciones</strong>: Acceso a liquidaciones de sueldo de los últimos 12 meses en PDF.</li>
+<li><strong>Solicitud de certificados laborales</strong>: Generación automática de certificados (antigüedad, renta, cotizaciones).</li>
+<li><strong>Actualización de datos personales</strong>: Modificación de teléfono, dirección de correo secundaria, contacto de emergencia.</li>
+<li><strong>Consulta de evaluaciones de desempeño</strong>: Acceso a resultados de evaluaciones anteriores.</li>
+
+</ul>
+<hr>
+
+<h3>RF-04: Sistema de Comunicación Interna</h3>
+<strong>Descripción</strong>: Canal único para todas las comunicaciones corporativas con segmentación de audiencias.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Publicación de noticias y anuncios con categorización (corporativo, país, área).</li>
+<li>Notificaciones push para anuncios importantes.</li>
+<li>Comentarios y reacciones en publicaciones.</li>
+<li>Encuestas y formularios de feedback.</li>
+<li>Suscripción opcional a categorías de noticias.</li>
+
+</ul>
+<hr>
+
+<h3>RF-05: Directorio Corporativo</h3>
+<strong>Descripción</strong>: Base de datos searchable de todos los empleados de la organización.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Búsqueda por nombre, apellido, área, cargo, ubicación, habilidades.</li>
+<li>Perfil de empleado con foto, cargo, área, teléfono, correo, ubicación.</li>
+<li>Organigrama interactivo navegable por área.</li>
+<li>Visualización de reporte jerárquico (jefe directo y equipo).</li>
+
+</ul>
+<hr>
+
+<h3>RF-06: Gestión de Contenidos (CMS)</h3>
+<strong>Descripción</strong>: Panel administrativo para que usuarios autorizados gestionen el contenido de la intranet.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Creación, edición, publicación y eliminación de contenidos.</li>
+<li>Editor WYSIWYG con soporte para texto, imágenes, videos, archivos adjuntos.</li>
+<li>Workflow de aprobación de contenidos antes de publicación.</li>
+<li>Programación de publicaciones futuras.</li>
+<li>Gestión de banners en página principal.</li>
+<li>Control de visibilidad por país o área.</li>
+
+</ul>
+<hr>
+
+<h3>RF-07: Repositorio de Documentos</h3>
+<strong>Descripción</strong>: Biblioteca centralizada de documentos corporativos organizados por categorías.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Navegación por categorías (políticas, procedimientos, formularios, manuales).</li>
+<li>Búsqueda de documentos por nombre, tags o contenido.</li>
+<li>Control de versiones de documentos.</li>
+<li>Permisos de acceso según roles (público, por área, confidencial).</li>
+<li>Descarga de documentos en formatos originales.</li>
+
+</ul>
+<hr>
+
+<h3>RF-08: Módulo de Soporte Técnico</h3>
+<strong>Descripción</strong>: Sistema de tickets para solicitudes de soporte de TI y servicios generales.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Creación de tickets con categorías (hardware, software, accesos, otros).</li>
+<li>Seguimiento del estado del ticket (abierto, en proceso, resuelto, cerrado).</li>
+<li>Notificaciones de cambios de estado.</li>
+<li>Base de conocimientos con FAQs.</li>
+<li>Rating de satisfacción al cerrar ticket.</li>
+
+</ul>
+<hr>
+
+<h3>RF-09: Panel de Indicadores (Dashboard)</h3>
+<strong>Descripción</strong>: Página principal personalizada con información relevante para cada usuario.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Resumen de noticias recientes.</li>
+<li>Tareas pendientes (vacaciones por aprobar, evaluaciones, cursos).</li>
+<li>Accesos rápidos a funciones más usadas.</li>
+<li>Cumpleaños del mes del equipo.</li>
+<li>Indicadores personales (días de vacaciones disponibles, antigüedad).</li>
+
+</ul>
+<hr>
+
+<h3>RF-10: Soporte Multiidioma</h3>
+<strong>Descripción</strong>: La interfaz debe estar disponible en español y portugués.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Interfaz completa traducida al español y portugués.</li>
+<li>Detección automática del idioma según país (Brasil = portugués, otros = español).</li>
+<li>Opción manual para cambiar idioma.</li>
+<li>Contenidos pueden ser creados en ambos idiomas.</li>
+
+</ul>
+<hr>
+
+<h3>RF-11: Diseño Responsive</h3>
+<strong>Descripción</strong>: La intranet debe ser accesible y funcional desde cualquier dispositivo.
+
+<strong>Criterios de Aceptación</strong>:
+<ul>
+<li>Diseño adaptativo para desktop, tablet y smartphone.</li>
+<li>Funcionalidades core disponibles en todos los dispositivos.</li>
+<li>Tiempos de carga optimizados para conexiones móviles.</li>
+<li>Touch-friendly en dispositivos móviles.</li>
+
+</ul>
+<hr>
+
+<h2>3. REQUISITOS NO FUNCIONALES</h2>
+
+<h3>RNF-01: Rendimiento</h3>
+<ul>
+<li><strong>Tiempo de carga inicial</strong>: Máximo 3 segundos para página principal.</li>
+<li><strong>Usuarios concurrentes</strong>: Soportar hasta 2,700 usuarios simultáneos sin degradación.</li>
+<li><strong>Tiempo de respuesta de transacciones</strong>: Máximo 2 segundos por operación.</li>
+<li><strong>Búsquedas</strong>: Resultados en menos de 1 segundo.</li>
+
+</ul>
+<h3>RNF-02: Disponibilidad</h3>
+<ul>
+<li><strong>Uptime</strong>: Disponibilidad del 99.5% (máximo 3.6 horas de downtime mensual).</li>
+<li><strong>Ventanas de mantenimiento</strong>: Programadas fuera del horario laboral.</li>
+<li><strong>Respaldo</strong>: Backups automáticos diarios con retención de 30 días.</li>
+
+</ul>
+<h3>RNF-03: Escalabilidad</h3>
+<ul>
+<li><strong>Crecimiento de usuarios</strong>: Arquitectura preparada para soportar hasta 5,000 usuarios.</li>
+<li><strong>Crecimiento de contenido</strong>: Capacidad de almacenar al menos 500 GB de documentos.</li>
+<li><strong>Escalamiento horizontal</strong>: Capacidad de agregar servidores según demanda.</li>
+
+</ul>
+<h3>RNF-04: Seguridad</h3>
+<ul>
+<li><strong>Encriptación</strong>: HTTPS/TLS 1.3 para todas las comunicaciones.</li>
+<li><strong>Autenticación</strong>: Integración con Active Directory/LDAP corporativo.</li>
+<li><strong>Autorización</strong>: Control de acceso basado en roles (RBAC).</li>
+<li><strong>Auditoría</strong>: Logs de acceso y transacciones críticas.</li>
+<li><strong>Protección de datos</strong>: Cumplimiento con leyes de protección de datos de cada país.</li>
+<li><strong>Prevención de ataques</strong>: Protección contra SQL Injection, XSS, CSRF.</li>
+
+</ul>
+<h3>RNF-05: Usabilidad</h3>
+<ul>
+<li><strong>Curva de aprendizaje</strong>: Usuarios pueden realizar tareas básicas sin capacitación.</li>
+<li><strong>Navegación intuitiva</strong>: Máximo 3 clics para acceder a cualquier funcionalidad.</li>
+<li><strong>Accesibilidad</strong>: Cumplimiento WCAG 2.1 nivel AA.</li>
+<li><strong>Mensajes de error</strong>: Claros y con sugerencias de solución.</li>
+
+</ul>
+<h3>RNF-06: Compatibilidad</h3>
+<ul>
+<li><strong>Navegadores</strong>: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+.</li>
+<li><strong>Sistemas operativos</strong>: Windows 10+, macOS 11+, iOS 14+, Android 10+.</li>
+<li><strong>Resoluciones</strong>: Desde 320px (móvil) hasta 2560px (desktop).</li>
+
+</ul>
+<h3>RNF-07: Mantenibilidad</h3>
+<ul>
+<li><strong>Código documentado</strong>: Comentarios en código y documentación técnica.</li>
+<li><strong>Arquitectura modular</strong>: Separación clara de capas y componentes.</li>
+<li><strong>Logs estructurados</strong>: Para facilitar troubleshooting.</li>
+<li><strong>Monitoreo</strong>: Dashboards de salud del sistema en tiempo real.</li>
+
+</ul>
+<hr>
+
+<h2>4. REQUISITOS DE CALIDAD</h2>
+
+<h3>Calidad del Software</h3>
+<li><strong>Cobertura de pruebas</strong>: Mínimo 80% de cobertura de código con pruebas automatizadas.</li>
+<li><strong>Pruebas de integración</strong>: Validación de todas las integraciones con sistemas legacy.</li>
+<li><strong>Pruebas de carga</strong>: Simulación de 3,000 usuarios concurrentes sin fallos.</li>
+<li><strong>Pruebas de seguridad</strong>: Auditoría de seguridad y pruebas de penetración sin vulnerabilidades críticas.</li>
+<li><strong>Pruebas de usabilidad</strong>: Sesiones con usuarios reales, satisfacción mínima de 4/5.</li>
+
+<h3>Calidad del Proceso</h3>
+<li><strong>Metodología ágil</strong>: Sprints de 2 semanas con entregas incrementales.</li>
+<li><strong>Code reviews</strong>: Revisión por pares del 100% del código antes de merge.</li>
+<li><strong>Gestión de cambios</strong>: Proceso formal para cambios de alcance.</li>
+<li><strong>Documentación continua</strong>: Actualización de documentación en cada sprint.</li>
+
+<h3>Calidad del Producto</h3>
+<li><strong>Performance</strong>: Cumplimiento de requisitos no funcionales de rendimiento.</li>
+<li><strong>Cero defectos críticos</strong>: En producción después de 2 semanas de estabilización.</li>
+<li><strong>Conformidad</strong>: Cumplimiento de estándares de desarrollo de la organización.</li>
+
+<hr>
+
+<h2>5. CRITERIOS DE ACEPTACIÓN</h2>
+
+<p>Los requisitos del proyecto serán aceptados cuando:</p>
+
+<li><strong>Funcionalidad completa</strong>: Todos los 11 requisitos funcionales están implementados y operativos.</li>
+<li><strong>Validación de usuarios</strong>: Pruebas de aceptación de usuario (UAT) completadas exitosamente con usuarios de los 4 países.</li>
+<li><strong>Cumplimiento de NFRs</strong>: Todos los requisitos no funcionales son validados mediante pruebas técnicas.</li>
+<li><strong>Integraciones operativas</strong>: Conexiones con sistemas de RRHH, nómina y directorio activo funcionando.</li>
+<li><strong>Sin bugs bloqueantes</strong>: Cero bugs de severidad crítica o alta pendientes.</li>
+<li><strong>Documentación completa</strong>: Manuales de usuario, técnicos y de operación entregados.</li>
+<li><strong>Capacitación realizada</strong>: Administradores y usuarios clave capacitados.</li>
+<li><strong>Aprobación formal</strong>: Sponsor y stakeholders principales firman acta de aceptación.</li>
+
+<hr>
+
+<h2>6. REGLAS DEL NEGOCIO</h2>
+
+<h3>RN-01: Permisos y Roles</h3>
+<ul>
+<li><strong>Administrador Global</strong>: Acceso total, gestión de usuarios y configuración.</li>
+<li><strong>Administrador de Contenido</strong>: Creación y publicación de noticias y documentos.</li>
+<li><strong>Administrador de RRHH</strong>: Acceso a módulo de RRHH, aprobación de solicitudes.</li>
+<li><strong>Gerente</strong>: Aprobación de vacaciones y solicitudes de su equipo.</li>
+<li><strong>Empleado</strong>: Acceso a información, autoservicio, sin permisos de administración.</li>
+
+</ul>
+<h3>RN-02: Solicitud de Vacaciones</h3>
+<ul>
+<li>El saldo de vacaciones se calcula automáticamente según antigüedad y días utilizados.</li>
+<li>Las solicitudes requieren aprobación del jefe directo.</li>
+<li>No se pueden solicitar más días de los disponibles en el saldo.</li>
+<li>Las vacaciones deben solicitarse con al menos 15 días de anticipación (excepto emergencias).</li>
+
+</ul>
+<h3>RN-03: Visualización de Contenido</h3>
+<ul>
+<li>Los usuarios solo ven contenido de su país, salvo contenido corporativo global.</li>
+<li>El contenido confidencial solo es visible para usuarios con permisos específicos.</li>
+<li>Las noticias tienen fecha de expiración automática (por defecto 90 días).</li>
+
+</ul>
+<h3>RN-04: Liquidaciones de Sueldo</h3>
+<ul>
+<li>Solo disponibles para el empleado titular, no para jefes o RRHH.</li>
+<li>Historial limitado a 12 meses.</li>
+<li>Descarga en formato PDF encriptado.</li>
+
+</ul>
+<h3>RN-05: Actualización de Datos Personales</h3>
+<ul>
+<li>Campos sensibles (RUT, nombre, cargo) solo modificables por RRHH.</li>
+<li>Cambios en datos de contacto son inmediatos.</li>
+<li>Cambios en datos bancarios requieren validación adicional.</li>
+
+</ul>
+<hr>
+
+<h2>7. IMPACTOS EN OTRAS ÁREAS</h2>
+
+<h3>Área de Recursos Humanos</h3>
+<ul>
+<li><strong>Impacto</strong>: Reducción de carga administrativa en un 40%.</li>
+<li><strong>Cambios necesarios</strong>: Capacitación en nuevos procesos digitales, redefinición de workflows de aprobaciones.</li>
+<li><strong>Beneficios</strong>: Más tiempo para actividades estratégicas, mejor trazabilidad de solicitudes.</li>
+
+</ul>
+<h3>Área de Tecnología (TI)</h3>
+<ul>
+<li><strong>Impacto</strong>: Nueva plataforma a mantener, integración con sistemas existentes.</li>
+<li><strong>Cambios necesarios</strong>: Incorporación de nueva tecnología al stack, documentación de procedimientos de soporte.</li>
+<li><strong>Beneficios</strong>: Modernización de infraestructura, reducción de solicitudes de soporte manual.</li>
+
+</ul>
+<h3>Área de Comunicaciones Internas</h3>
+<ul>
+<li><strong>Impacto</strong>: Cambio de canal principal de comunicación.</li>
+<li><strong>Cambios necesarios</strong>: Aprendizaje de herramienta CMS, estrategia de contenido digital.</li>
+<li><strong>Beneficios</strong>: Mayor alcance y engagement, métricas de efectividad de comunicaciones.</li>
+
+</ul>
+<h3>Área Legal y Compliance</h3>
+<ul>
+<li><strong>Impacto</strong>: Necesidad de validar cumplimiento normativo en 4 países.</li>
+<li><strong>Cambios necesarios</strong>: Revisión de políticas de privacidad, términos de uso.</li>
+<li><strong>Beneficios</strong>: Mejor control de acceso a información sensible, trazabilidad de auditoría.</li>
+
+</ul>
+<h3>Gerencias de País</h3>
+<ul>
+<li><strong>Impacto</strong>: Nuevo canal para comunicación con equipos locales.</li>
+<li><strong>Cambios necesarios</strong>: Designación de administradores de contenido regional.</li>
+<li><strong>Beneficios</strong>: Mejor llegada a equipos distribuidos, información regionalizada.</li>
+
+</ul>
+<hr>
+
+<h2>8. IMPACTOS EN OTRAS ENTIDADES</h2>
+
+<h3>Empleados (2,700 usuarios)</h3>
+<ul>
+<li><strong>Impacto</strong>: Cambio de herramienta de trabajo diario.</li>
+<li><strong>Gestión del cambio</strong>: Plan de comunicación, capacitaciones, materiales de apoyo, soporte durante transición.</li>
+<li><strong>Beneficios</strong>: Mayor autonomía, acceso 24/7, información relevante, ahorro de tiempo.</li>
+
+</ul>
+<h3>Proveedores de Servicios TI</h3>
+<ul>
+<li><strong>Impacto</strong>: Posible cambio de proveedor de hosting.</li>
+<li><strong>Coordinación</strong>: Migración de infraestructura, transferencia de datos.</li>
+
+</ul>
+<h3>Sistemas Legacy (RRHH, Nómina, ERP)</h3>
+<ul>
+<li><strong>Impacto</strong>: Necesidad de exponer APIs o interfaces de integración.</li>
+<li><strong>Coordinación</strong>: Definición de contratos de integración, pruebas exhaustivas.</li>
+
+</ul>
+<hr>
+
+<h2>9. REQUERIMIENTOS DE SOPORTE Y ENTRENAMIENTO</h2>
+
+<h3>Soporte Técnico</h3>
+<li><strong>Nivel 1 - Mesa de Ayuda</strong>: </li>
+<p>   - Disponibilidad: Lunes a viernes, 8:00 a 20:00 (hora local cada país).</p>
+<p>   - Canal: Teléfono, email, chat en línea, sistema de tickets.</p>
+<p>   - Tiempo de respuesta: 2 horas para consultas, 4 horas para incidentes.</p>
+
+<li><strong>Nivel 2 - Soporte Especializado</strong>:</li>
+<p>   - Equipo técnico para problemas complejos.</p>
+<p>   - Disponibilidad: Lunes a viernes, 9:00 a 18:00 (Chile).</p>
+<p>   - Tiempo de respuesta: 24 horas.</p>
+
+<li><strong>Nivel 3 - Desarrollo</strong>:</li>
+<p>   - Bugs o errores del sistema.</p>
+<p>   - Tiempo de respuesta: 48 horas para severidad alta, 5 días para severidad media.</p>
+
+<h3>Materiales de Entrenamiento</h3>
+<li><strong>Manuales de Usuario</strong>:</li>
+<p>   - Manual general de usuario (PDF y online).</p>
+<p>   - Guías rápidas por funcionalidad.</p>
+<p>   - FAQs.</p>
+
+<li><strong>Videos Tutoriales</strong>:</li>
+<p>   - Video de introducción (5 minutos).</p>
+<p>   - Videos por módulo: RRHH (10 min), Comunicaciones (5 min), Directorio (3 min).</p>
+<p>   - Screencasts para tareas comunes.</p>
+
+<li><strong>Capacitaciones Presenciales/Virtuales</strong>:</li>
+<p>   - <strong>Usuarios finales</strong>: Sesión de 1 hora, grupos de 30 personas, en los 4 países.</p>
+<p>   - <strong>Administradores</strong>: Taller de 4 horas, gestión de contenidos y configuración.</p>
+<p>   - <strong>Soporte TI</strong>: Capacitación técnica de 8 horas, troubleshooting y mantenimiento.</p>
+
+<li><strong>Recursos Online</strong>:</li>
+<p>   - Sección de ayuda integrada en la intranet.</p>
+<p>   - Base de conocimientos con búsqueda.</p>
+<p>   - Chatbot de soporte para consultas frecuentes.</p>
+
+<hr>
+
+<h2>10. SUPUESTOS RELATIVOS A REQUISITOS</h2>
+
+<li>Los requisitos aquí documentados están basados en entrevistas con stakeholders clave (RRHH, TI, Gerencias).</li>
+<li>Los sistemas legacy (RRHH, nómina) cuentan con APIs disponibles o método de integración viable.</li>
+<li>Los datos de empleados en sistemas actuales están actualizados y con calidad suficiente para migración.</li>
+<li>La estructura organizacional (áreas, jerarquías) está correctamente reflejada en el directorio activo.</li>
+<li>Los usuarios cuentan con credenciales corporativas activas en Active Directory.</li>
+<li>La infraestructura de red en los 4 países soporta aplicaciones web corporativas.</li>
+<li>Los empleados tienen acceso a dispositivos (PC, tablet o smartphone) para usar la intranet.</li>
+
+<hr>
+
+<h2>11. RESTRICCIONES RELATIVAS A REQUISITOS</h2>
+
+<li><strong>Regulatorias</strong>:</li>
+<p>   - Chile: Cumplimiento Ley 19.628 de Protección de Datos Personales.</p>
+<p>   - Argentina: Cumplimiento Ley 25.326 de Protección de Datos Personales.</p>
+<p>   - Brasil: Cumplimiento LGPD (Lei Geral de Proteção de Dados).</p>
+<p>   - Colombia: Cumplimiento Ley 1581 de Protección de Datos Personales.</p>
+
+<li><strong>Tecnológicas</strong>:</li>
+<p>   - Debe integrarse con Active Directory existente (no reemplazarlo).</p>
+<p>   - Debe usar infraestructura cloud actual de la empresa (AWS o Azure).</p>
+<p>   - No puede requerir instalación de software adicional en computadores de usuarios.</p>
+
+<li><strong>Organizacionales</strong>:</li>
+<p>   - Los procesos de RRHH definidos no pueden modificarse sustancialmente (ej: flujo de aprobación de vacaciones).</p>
+<p>   - La estructura de áreas y cargos debe respetarse según organigrama oficial.</p>
+
+<li><strong>De Proyecto</strong>:</li>
+<p>   - Todas las funcionalidades deben estar listas en 5 meses.</p>
+<p>   - El costo total no puede exceder $100.000.000.</p>
+<p>   - No se puede contratar personal adicional permanente (solo temporal o consultores).</p>
+
+<hr>
+
+<h2>APROBACIONES</h2>
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Rol</th>
+<th>Firma</th>
+<th>Fecha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sebastian Briceño</td>
+<td>Director de RRHH</td>
+<td>_____________</td>
+<td>___/___/2026</td>
+</tr>
+<tr>
+<td>Sebastian Briceño</td>
+<td>Director de TI</td>
+<td>_____________</td>
+<td>___/___/2026</td>
+</tr>
+<tr>
+<td>Sebastian Briceño</td>
+<td>Jefe de Proyecto</td>
+<td>_____________</td>
+<td>___/___/2026</td>
+</tr>
+</tbody>
+</table>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
+            <a href="index.html" class="btn btn-secondary">← Volver al Inicio</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>Gestión de Proyectos de Software (GPY2202)</strong></p>
+            <p>Semana 3: Planificando Requerimientos del Proyecto</p>
+            <p>Grupo 15 • Sebastian Briceño • Duoc UC • 2026</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Print button functionality
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>

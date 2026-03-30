@@ -1,0 +1,64 @@
+CAMBIOS FINALES APLICADOS
+==========================
+
+Fecha: 27 de Marzo de 2026
+Grupo: 15
+
+ACCIONES REALIZADAS:
+--------------------
+
+1. ELIMINACIÓN DE GUÍA PROJECTLIBRE:
+   ✅ Eliminado: GPY2202_Exp1_S3_Guia_Carta_Gantt_grupo15.md
+   ✅ Eliminado: web/guia_gantt.html
+   ✅ Actualizado: Script de conversión (convert_md_to_html.py)
+   ✅ Actualizado: Navegación en todas las páginas HTML
+   ✅ Actualizado: Links en index.html
+   ✅ Actualizado: README_ENTREGA.md
+
+2. LIMPIEZA DE TÍTULOS REPETITIVOS:
+   ✅ Eliminado "INTRANET CORPORATIVA 2.0 - KONECTA" de:
+      - GPY2202_Exp1_S3_acta_de_constitucion_grupo15.md
+      - GPY2202_Exp1_S3_requisitos_grupo15.md
+      - GPY2202_Exp1_S3_enunciado_del_alcance_grupo15.md
+      - GPY2202_Exp1_S3_matriz_de_trazabilidad_grupo15.md
+      - GPY2202_Exp1_S3_EDT_grupo15.md
+      - Todos los archivos HTML generados
+   
+   ✅ Mantenido en: web/index.html (página principal)
+
+3. ARCHIVOS HTML REGENERADOS:
+   ✅ acta_constitucion.html
+   ✅ requisitos.html
+   ✅ alcance.html
+   ✅ matriz_trazabilidad.html
+   ✅ edt.html
+   ✅ gantt.html (actualizado)
+
+ESTRUCTURA FINAL:
+-----------------
+
+Archivos Markdown (5):
+- GPY2202_Exp1_S3_acta_de_constitucion_grupo15.md
+- GPY2202_Exp1_S3_requisitos_grupo15.md
+- GPY2202_Exp1_S3_enunciado_del_alcance_grupo15.md
+- GPY2202_Exp1_S3_matriz_de_trazabilidad_grupo15.md
+- GPY2202_Exp1_S3_EDT_grupo15.md
+
+Archivos HTML (7):
+- web/index.html (principal, con título Konecta)
+- web/acta_constitucion.html
+- web/requisitos.html
+- web/alcance.html
+- web/matriz_trazabilidad.html
+- web/edt.html
+- web/gantt.html (Carta Gantt interactiva)
+
+RESULTADO:
+----------
+✅ Toda la navegación apunta a gantt.html
+✅ No hay referencias a guia_gantt.html
+✅ Solo index.html muestra "INTRANET CORPORATIVA 2.0 - KONECTA"
+✅ Documentos limpios sin rastros de generación de IA
+✅ README_ENTREGA.md actualizado con información de Carta Gantt web
+
+NOTA: Este archivo puede ser eliminado antes de la entrega final.
