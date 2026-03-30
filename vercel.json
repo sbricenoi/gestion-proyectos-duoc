@@ -1,10 +1,6 @@
 {
   "version": 2,
   "public": true,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/Semana%203/web/$1"
-    }
-  ]
+  "buildCommand": "bash build.sh",
+  "outputDirectory": "public"
 }
