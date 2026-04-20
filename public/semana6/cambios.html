@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cambios - Intranet Konecta | Grupo 15</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Librerías para generar archivos Office -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC" class="logo-img">
+                <span class="logo-text">Gestión de Proyectos</span>
+            </a>
+            <div class="project-info">
+                <div class="project-title">GPY2202 - Semana 6 (Experiencia 2)</div>
+                <div class="project-meta">Grupo 15 • Sebastian Briceño</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link">🏠 Inicio</a>
+            <a href="riesgos.html" class="nav-link">⚠️ Matriz de Riesgos</a>
+            <a href="monitoreo.html" class="nav-link">📊 Monitoreo</a>
+            <a href="performance.html" class="nav-link">📈 Performance (EVM)</a>
+            <a href="cambios.html" class="nav-link active">🔄 Solicitudes de Cambio</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">🔄 Gestión de Solicitudes de Cambio</h1>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">Control de Cambios del Proyecto - 7 Solicitudes Recibidas al cierre de Semana 10</p>
+
+        <!-- Resumen -->
+        <div class="hero">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #667eea;">7</div>
+                    <div style="color: #666;">Solicitudes Totales</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">3</div>
+                    <div style="color: #666;">Aprobadas</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #ef4444;">2</div>
+                    <div style="color: #666;">Rechazadas</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #f59e0b;">2</div>
+                    <div style="color: #666;">Pendientes/Diferidas</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla Resumen -->
+        <section class="section">
+            <h2 class="section-title">📋 Resumen de Todas las Solicitudes</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Solicitud</th>
+                            <th>Solicitante</th>
+                            <th>Costo</th>
+                            <th>Tiempo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #d1fae5;">
+                            <td><strong>C001</strong></td>
+                            <td>Flujo Multi-Nivel Aprobación Vacaciones</td>
+                            <td>Dir. RRHH Chile</td>
+                            <td>+$3M</td>
+                            <td>+3.5 sem</td>
+                            <td class="risk-verylow">✅ APROBADO</td>
+                        </tr>
+                        <tr style="background: #d1fae5;">
+                            <td><strong>C002</strong></td>
+                            <td>Cálculo Días Hábiles Brasil</td>
+                            <td>Dir. Legal Brasil</td>
+                            <td>+$1M</td>
+                            <td>+0.5 sem</td>
+                            <td class="risk-verylow">✅ APROBADO</td>
+                        </tr>
+                        <tr style="background: #d1fae5;">
+                            <td><strong>C003</strong></td>
+                            <td>Módulo de Encuestas Satisfacción</td>
+                            <td>Dir. Calidad</td>
+                            <td>+$3M</td>
+                            <td>+1 sem</td>
+                            <td class="risk-verylow">✅ APROBADO</td>
+                        </tr>
+                        <tr style="background: #fee2e2;">
+                            <td><strong>C004</strong></td>
+                            <td>Módulo de Banco de Horas</td>
+                            <td>Dir. RRHH Argentina</td>
+                            <td>+$5M</td>
+                            <td>+3 sem</td>
+                            <td class="risk-high">❌ RECHAZADO</td>
+                        </tr>
+                        <tr style="background: #fef3c7;">
+                            <td><strong>C005</strong></td>
+                            <td>Firma Electrónica Brasil (Legal)</td>
+                            <td>Dir. Legal Brasil</td>
+                            <td>+$28.5M</td>
+                            <td>+5.5 sem</td>
+                            <td class="risk-medium">⏳ PENDIENTE</td>
+                        </tr>
+                        <tr style="background: #fee2e2;">
+                            <td><strong>C006</strong></td>
+                            <td>Integración Microsoft Teams</td>
+                            <td>Dir. Comunicaciones</td>
+                            <td>+$12M</td>
+                            <td>+6 sem</td>
+                            <td class="risk-high">❌ RECHAZADO</td>
+                        </tr>
+                        <tr style="background: #fef3c7;">
+                            <td><strong>C007</strong></td>
+                            <td>App Móvil Nativa (iOS/Android)</td>
+                            <td>VP Tecnología</td>
+                            <td>+$15M</td>
+                            <td>+8 sem</td>
+                            <td class="risk-medium">⏸️ DIFERIDO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box" style="margin-top: 2rem;">
+                <h3>💰 Impacto Total de Cambios Aprobados</h3>
+                <p><strong>Costo:</strong> +$7M (7% del presupuesto original)</p>
+                <p><strong>Cronograma:</strong> +5 semanas (si se ejecutan secuencialmente)</p>
+                <p><strong>Alcance:</strong> +15% de funcionalidades adicionales</p>
+            </div>
+        </section>
+
+        <!-- Cambios Aprobados -->
+        <section class="section">
+            <h2 class="section-title">✅ Cambios Aprobados (Detalles)</h2>
+            
+            <!-- C001 -->
+            <div class="success-box">
+                <h3>C001: Flujo Multi-Nivel de Aprobación de Vacaciones ✅</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>Fecha Solicitud:</strong> 15-Junio-2026</div>
+                    <div><strong>Fecha Aprobación:</strong> 17-Junio-2026</div>
+                    <div><strong>Prioridad:</strong> Alta</div>
+                    <div><strong>Tipo:</strong> Alcance</div>
+                </div>
+                
+                <p style="margin: 1rem 0;"><strong>📝 Descripción:</strong></p>
+                <p>Implementar flujo de aprobación con 3 niveles jerárquicos para solicitudes de vacaciones superiores a 10 días. Actualmente solo hay 1 nivel (supervisor directo). Requerimiento de Directora de RRHH Chile.</p>
+                
+                <p style="margin: 1rem 0;"><strong>💼 Justificación del Negocio:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Política corporativa actualizada en Enero 2026 requiere aprobaciones múltiples</li>
+                    <li>Evitar conflictos de ausencias simultáneas en equipos críticos</li>
+                    <li>Alineamiento con control presupuestario de RRHH</li>
+                </ul>
+                
+                <p style="margin: 1rem 0;"><strong>📊 Análisis de Impacto:</strong></p>
+                <div class="table-container" style="margin: 1rem 0;">
+                    <table>
+                        <thead>
+                            <tr><th>Dimensión</th><th>Impacto</th><th>Detalles</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Alcance</strong></td><td class="risk-low">+Medio</td><td>Añadir 3 nuevas pantallas, lógica aprobación, notificaciones</td></tr>
+                            <tr><td><strong>Cronograma</strong></td><td class="risk-low">+3.5 semanas</td><td>Desarrollo + QA + UAT (paralelo a Sprint 3)</td></tr>
+                            <tr><td><strong>Costo</strong></td><td class="risk-low">+$3M</td><td>Desarrollo: $2M, QA: $0.5M, Capacitación: $0.5M</td></tr>
+                            <tr><td><strong>Calidad</strong></td><td class="risk-verylow">Neutro</td><td>No afecta. Cobertura de pruebas mantenida</td></tr>
+                            <tr><td><strong>Riesgos</strong></td><td class="risk-low">+Bajo</td><td>Riesgo de complejidad en reglas de negocio</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin: 1rem 0;"><strong>✅ Decisión del Comité:</strong></p>
+                <p><strong>APROBADO</strong> - 17-Junio-2026</p>
+                <p><em>Fundamento: Requisito regulatorio de negocio. Impacto moderado y manejable. Se aprobó presupuesto adicional de $3M desde reserva de contingencia.</em></p>
+                
+                <p style="margin: 1rem 0;"><strong>Firmas de Aprobación:</strong></p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>✅ Sebastian Briceño - Jefe de Proyecto</li>
+                    <li>✅ Patricia Vega - Directora de RRHH (Sponsor)</li>
+                    <li>✅ Luis Morales - Director Financiero (Presupuesto)</li>
+                </ul>
+            </div>
+
+            <!-- C002 -->
+            <div class="success-box">
+                <h3>C002: Lógica de Cálculo de Días Hábiles para Brasil ✅</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>Fecha Solicitud:</strong> 18-Junio-2026</div>
+                    <div><strong>Fecha Aprobación:</strong> 19-Junio-2026</div>
+                    <div><strong>Prioridad:</strong> Crítica</div>
+                    <div><strong>Tipo:</strong> Corrección</div>
+                </div>
+                
+                <p style="margin: 1rem 0;"><strong>📝 Descripción:</strong></p>
+                <p>Corregir cálculo de días hábiles para solicitudes de vacaciones en Brasil. Sistema actual usa calendario chileno (no considera feriados nacionales brasileños).</p>
+                
+                <p style="margin: 1rem 0;"><strong>⚠️ Impacto de NO Implementar:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Incumplimiento de ley laboral brasileña (multa: $50K USD)</li>
+                    <li>Errores en cálculo de saldos de vacaciones de 800 empleados</li>
+                    <li>Reclamos legales de sindicato</li>
+                </ul>
+                
+                <p style="margin: 1rem 0;"><strong>📊 Impacto:</strong> Costo: +$1M | Tiempo: +0.5 semanas | Riesgo: Bajo</p>
+
+                <p style="margin: 1rem 0;"><strong>✅ Decisión:</strong> <strong>APROBADO</strong> por vía de urgencia (18-Junio-2026)</p>
+                <p><em>Fundamento: Requisito legal crítico. Bajo costo y tiempo. Alto riesgo de NO implementar.</em></p>
+            </div>
+
+            <!-- C003 -->
+            <div class="success-box">
+                <h3>C003: Módulo de Encuestas de Satisfacción de Usuarios ✅</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>Fecha Solicitud:</strong> 20-Junio-2026</div>
+                    <div><strong>Fecha Aprobación:</strong> 21-Junio-2026</div>
+                    <div><strong>Prioridad:</strong> Media</div>
+                    <div><strong>Tipo:</strong> Alcance (Nice-to-Have)</div>
+                </div>
+                
+                <p style="margin: 1rem 0;"><strong>📝 Descripción:</strong></p>
+                <p>Añadir módulo básico de encuestas de satisfacción (NPS y CSAT) para medir adopción y satisfacción de usuarios con la nueva intranet.</p>
+                
+                <p style="margin: 1rem 0;"><strong>💼 Valor de Negocio:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Métricas de éxito del proyecto (KPI comprometido con Sponsor)</li>
+                    <li>Identificar mejoras para Fase 2</li>
+                    <li>Justificar ROI del proyecto</li>
+                </ul>
+
+                <p style="margin: 1rem 0;"><strong>📊 Impacto:</strong> Costo: +$3M | Tiempo: +1 semana | Alcance: +5 funcionalidades</p>
+
+                <p style="margin: 1rem 0;"><strong>✅ Decisión:</strong> <strong>APROBADO CONDICIONADO</strong></p>
+                <p><em>Se aprueba pero con opción de diferir a Fase 2 si el proyecto entra en retraso. Prioridad ajustable.</em></p>
+            </div>
+        </section>
+
+        <!-- Cambios Rechazados -->
+        <section class="section">
+            <h2 class="section-title">❌ Cambios Rechazados</h2>
+            
+            <!-- C004 -->
+            <div class="danger-box">
+                <h3>C004: Módulo de Banco de Horas ❌</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>Fecha Solicitud:</strong> 16-Junio-2026</div>
+                    <div><strong>Fecha Rechazo:</strong> 19-Junio-2026</div>
+                    <div><strong>Solicitante:</strong> Dir. RRHH Argentina</div>
+                    <div><strong>Estado:</strong> Rechazado</div>
+                </div>
+                
+                <p style="margin: 1rem 0;"><strong>📝 Descripción:</strong></p>
+                <p>Implementar módulo de "banco de horas" para Argentina donde empleados pueden acumular horas extra y canjear por tiempo libre.</p>
+                
+                <p style="margin: 1rem 0;"><strong>📊 Análisis de Impacto:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Costo:</strong> +$5M (5% del presupuesto)</li>
+                    <li><strong>Tiempo:</strong> +3 semanas (desarrollo complejo)</li>
+                    <li><strong>Alcance:</strong> 20+ pantallas, integración nómina</li>
+                    <li><strong>Riesgo:</strong> Alto - Complejidad regulatoria Argentina</li>
+                </ul>
+
+                <p style="margin: 1rem 0;"><strong>❌ Razones del Rechazo:</strong></p>
+                <ol style="margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Alcance Nice-to-Have:</strong> No es requisito crítico del negocio</li>
+                    <li><strong>Alto Costo-Beneficio:</strong> Inversión desproporcionada vs. valor</li>
+                    <li><strong>Complejidad:</strong> Requiere integración profunda con nómina</li>
+                    <li><strong>Impacto Cronograma:</strong> +3 semanas retrasaría go-live</li>
+                    <li><strong>Presupuesto:</strong> Consumiría 38% de reserva de contingencia</li>
+                </ol>
+
+                <p style="margin: 1rem 0;"><strong>🔄 Alternativa Aprobada:</strong></p>
+                <p>Proceso manual en Fase 1, módulo automático diferido a Fase 2 (post-lanzamiento).</p>
+            </div>
+
+            <!-- C006 -->
+            <div class="danger-box">
+                <h3>C006: Integración con Microsoft Teams para Videoconferencias ❌</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>Fecha Solicitud:</strong> 19-Junio-2026</div>
+                    <div><strong>Fecha Rechazo:</strong> 21-Junio-2026</div>
+                    <div><strong>Solicitante:</strong> Dir. Comunicaciones</div>
+                    <div><strong>Estado:</strong> Rechazado</div>
+                </div>
+                
+                <p style="margin: 1rem 0;"><strong>📝 Descripción:</strong></p>
+                <p>Integrar Microsoft Teams en la intranet para agendar y lanzar videoconferencias directamente desde perfiles de colaboradores.</p>
+                
+                <p style="margin: 1rem 0;"><strong>📊 Análisis de Impacto:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Costo:</strong> +$12M (12% presupuesto) - Licencias API Teams + desarrollo</li>
+                    <li><strong>Tiempo:</strong> +6 semanas (integración compleja, certificación MS)</li>
+                    <li><strong>Riesgo:</strong> Muy Alto - Dependencia de API externa, tiempo de certificación</li>
+                </ul>
+
+                <p style="margin: 1rem 0;"><strong>❌ Decisión:</strong> <strong>RECHAZADO</strong> - 21-Junio-2026</p>
+                <p><em>Fundamento: Impacto desproporcionado (12% costo, 27% tiempo). Funcionalidad nice-to-have. Usuarios pueden usar Teams externamente.</em></p>
+
+                <p style="margin: 1rem 0;"><strong>🔄 Alternativa Implementada:</strong></p>
+                <p>Añadir links directos a perfiles de Teams en directorio corporativo (costo: $0, tiempo: 2 días).</p>
+            </div>
+        </section>
+
+        <!-- Cambios Pendientes -->
+        <section class="section">
+            <h2 class="section-title">⏳ Cambios Pendientes de Decisión</h2>
+            
+            <!-- C005 -->
+            <div class="warning-box">
+                <h3>C005: Firma Electrónica para Solicitudes RRHH en Brasil ⏳</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>Fecha Solicitud:</strong> 19-Junio-2026</div>
+                    <div><strong>Estado:</strong> Pendiente de Decisión Sponsor</div>
+                    <div><strong>Prioridad:</strong> Crítica</div>
+                    <div><strong>Deadline Decisión:</strong> 26-Junio-2026</div>
+                </div>
+                
+                <p style="margin: 1rem 0;"><strong>📝 Descripción:</strong></p>
+                <p>Implementar firma electrónica certificada para solicitudes de RRHH en Brasil (vacaciones, permisos, certificados). Nueva ley brasileña MP 2.200-2/2001 actualizada en Marzo 2026 requiere firma electrónica ICP-Brasil.</p>
+                
+                <p style="margin: 1rem 0;"><strong>⚖️ Análisis Complejo:</strong></p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem 0;">
+                    <div>
+                        <h4 style="color: #059669; margin-bottom: 0.5rem;">✅ Argumentos a Favor</h4>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li><strong>Requisito Legal:</strong> Ley brasileña lo exige</li>
+                            <li><strong>800 Usuarios Brasil:</strong> 30% de la base</li>
+                            <li><strong>Riesgo Multas:</strong> Hasta $200K USD</li>
+                            <li><strong>Competitividad:</strong> Competencia ya lo tiene</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #dc2626; margin-bottom: 0.5rem;">❌ Argumentos en Contra</h4>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li><strong>Costo Muy Alto:</strong> +$28.5M (28%!)</li>
+                            <li><strong>Tiempo Extenso:</strong> +5.5 semanas</li>
+                            <li><strong>Complejidad Técnica:</strong> Certificados ICP-Brasil</li>
+                            <li><strong>Sobrecosto Proyectado:</strong> Llegaría a $140M</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="margin: 1rem 0;"><strong>📊 Impacto Total:</strong></p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>Dimensión</th><th>Impacto</th><th>Detalles</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Costo</strong></td><td class="risk-high">+$28.5M (28%)</td><td>Licencias Soluti (ICP-Brasil): $20M, Desarrollo: $8.5M</td></tr>
+                            <tr><td><strong>Cronograma</strong></td><td class="risk-high">+5.5 semanas</td><td>Go-Live retrasado a 5-Octubre-2026</td></tr>
+                            <tr><td><strong>Presupuesto Final</strong></td><td class="risk-critical">$140M</td><td>Sobrecosto de 40% del original</td></tr>
+                            <tr><td><strong>Alcance Brasil</strong></td><td class="risk-medium">15 pantallas nuevas</td><td>Módulo completo de firma + onboarding</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin: 1.5rem 0;"><strong>🎯 Recomendación del Jefe de Proyecto:</strong></p>
+                <div class="info-box">
+                    <p><strong>Opción Recomendada:</strong> Aprobación con Go-Live Escalonado</p>
+                    <ul style="margin: 1rem 0 0 1.5rem; line-height: 2;">
+                        <li><strong>Fase 1 (31-Agosto):</strong> Lanzar Chile, Argentina, Colombia sin firma digital</li>
+                        <li><strong>Fase 1B (15-Septiembre):</strong> Lanzar Brasil con firma electrónica certificada</li>
+                        <li><strong>Costo:</strong> Mantener $28.5M adicionales</li>
+                        <li><strong>Beneficio:</strong> No retrasar go-live para 70% de usuarios</li>
+                        <li><strong>Riesgo Mitigado:</strong> Cumplimiento legal en Brasil sin impactar otros países</li>
+                    </ul>
+                </div>
+
+                <p style="margin: 1.5rem 0; font-weight: 600; color: #991b1b;">⚠️ URGENTE: Requiere decisión del Sponsor antes de Semana 11 (26-Junio-2026)</p>
+            </div>
+
+            <!-- C007 -->
+            <div class="warning-box">
+                <h3>C007: App Móvil Nativa iOS y Android ⏸️</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>Fecha Solicitud:</strong> 21-Junio-2026</div>
+                    <div><strong>Estado:</strong> Diferido a Fase 2</div>
+                    <div><strong>Solicitante:</strong> VP Tecnología</div>
+                    <div><strong>Decisión:</strong> 21-Junio-2026</div>
+                </div>
+                
+                <p style="margin: 1rem 0;"><strong>📝 Descripción:</strong></p>
+                <p>Desarrollar app móvil nativa (iOS + Android) con funcionalidades core: notificaciones push, solicitud vacaciones, directorio, noticias.</p>
+                
+                <p style="margin: 1rem 0;"><strong>📊 Impacto:</strong> Costo: +$15M | Tiempo: +8 semanas | 2 desarrolladores móviles nuevos</p>
+
+                <p style="margin: 1rem 0;"><strong>⏸️ Decisión:</strong> <strong>DIFERIDO A FASE 2</strong></p>
+                <p><em>La app web responsive actual cubre 85% de casos de uso móvil. App nativa es deseable pero no crítica. Se priorizará en roadmap 2027.</em></p>
+            </div>
+        </section>
+
+        <!-- Proceso de Control -->
+        <section class="section">
+            <h2 class="section-title">⚙️ Proceso de Control de Cambios</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="card" style="background: #eff6ff; border-left: 4px solid #3b82f6;">
+                    <h3>1️⃣ Solicitud</h3>
+                    <p>Stakeholder completa formulario de cambio con justificación de negocio y beneficios esperados.</p>
+                </div>
+
+                <div class="card" style="background: #fef3c7; border-left: 4px solid #f59e0b;">
+                    <h3>2️⃣ Análisis</h3>
+                    <p>Jefe de Proyecto evalúa impacto en alcance, cronograma, costo, calidad y riesgos (5 dimensiones).</p>
+                </div>
+
+                <div class="card" style="background: #d1fae5; border-left: 4px solid #10b981;">
+                    <h3>3️⃣ Comité</h3>
+                    <p>Comité de Control de Cambios (CCB) evalúa y decide: aprobar, rechazar o diferir.</p>
+                </div>
+
+                <div class="card" style="background: #e0e7ff; border-left: 4px solid #667eea;">
+                    <h3>4️⃣ Ejecución</h3>
+                    <p>Cambios aprobados se incorporan a plan, presupuesto y cronograma actualizado.</p>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 2rem;">
+                <h3>👥 Comité de Control de Cambios (CCB)</h3>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Sebastian Briceño</strong> - Jefe de Proyecto (Presidente)</li>
+                    <li><strong>Patricia Vega</strong> - Directora RRHH (Sponsor)</li>
+                    <li><strong>Luis Morales</strong> - Director Financiero (Presupuesto)</li>
+                    <li><strong>Carlos Méndez</strong> - Líder Técnico (Factibilidad)</li>
+                    <li><strong>Ana Silva</strong> - Líder de QA (Calidad)</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Reuniones:</strong> Martes 14:00 hrs (semanal), con convocatoria extraordinaria si cambio es urgente.</p>
+            </div>
+        </section>
+
+        <!-- Gráficos -->
+        <section class="section">
+            <h2 class="section-title">📊 Visualización de Cambios</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                <div class="chart-container">
+                    <h3 class="chart-title">Distribución por Estado</h3>
+                    <canvas id="statusChart" style="max-height: 300px;"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3 class="chart-title">Impacto en Costo (Millones CLP)</h3>
+                    <canvas id="costChart" style="max-height: 300px;"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lecciones Aprendidas -->
+        <div class="success-box" style="margin-top: 3rem;">
+            <h3>📚 Lecciones Aprendidas en Gestión de Cambios</h3>
+            <ol style="margin-left: 1.5rem; line-height: 2;">
+                <li><strong>Change Freeze es Crítico:</strong> Establecer fecha de congelamiento (Semana 12) evita cambios de última hora.</li>
+                <li><strong>Análisis de Impacto Riguroso:</strong> Evaluar las 5 dimensiones (alcance, cronograma, costo, calidad, riesgos) previene sorpresas.</li>
+                <li><strong>Alternativas Creativas:</strong> Como en C006, buscar soluciones de bajo costo puede satisfacer al stakeholder sin impacto mayor.</li>
+                <li><strong>Sponsor en el CCB:</strong> Participación del Sponsor acelera decisiones y respalda rechazos.</li>
+                <li><strong>Documentación Clara:</strong> Formato estándar con justificación, impacto y decisión facilita trazabilidad.</li>
+                <li><strong>Go-Live Escalonado:</strong> Como en C005, permite cumplir requisitos específicos sin retrasar proyecto completo.</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>GPY2202 - Gestión de Proyectos - Experiencia 2</strong></p>
+            <p>Gestión de Solicitudes de Cambio</p>
+            <p>Jefe de Proyecto: Sebastian Briceño • Grupo 15</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">DUOC UC - Abril 2026</p>
+        </div>
+    </footer>
+
+    <!-- Barra de Descarga Flotante -->
+    <div class="download-bar" id="downloadBar">
+        <button class="download-bar-close" onclick="document.getElementById('downloadBar').classList.add('hidden')">×</button>
+        <h3><span>📥</span> Descargar Documentos</h3>
+        <div class="download-buttons">
+            <button class="btn-download primary" onclick="descargarSolicitudesCambio()">
+                <span>🔄 Solicitudes Cambio (Word)</span>
+                <span class="icon">↓</span>
+            </button>
+            <button class="btn-download" onclick="descargarTodosDocumentos()">
+                <span>📦 Todos los Documentos</span>
+                <span class="icon">↓</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/downloads.js"></script>
+    <script>
+        // Gráfico de Estado
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Aprobados', 'Rechazados', 'Pendientes'],
+                datasets: [{
+                    data: [3, 2, 2],
+                    backgroundColor: ['#10b981', '#ef4444', '#f59e0b'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Costo
+        const costCtx = document.getElementById('costChart').getContext('2d');
+        new Chart(costCtx, {
+            type: 'bar',
+            data: {
+                labels: ['C001', 'C002', 'C003', 'C004', 'C005', 'C006', 'C007'],
+                datasets: [{
+                    label: 'Impacto en Costo (Millones CLP)',
+                    data: [3, 1, 3, 5, 28.5, 12, 15],
+                    backgroundColor: [
+                        '#10b981', '#10b981', '#10b981', '#ef4444', '#f59e0b', '#ef4444', '#f59e0b'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Millones CLP'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

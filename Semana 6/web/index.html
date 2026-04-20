@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 6: Gestión de Riesgos y Performance - Intranet Konecta | Grupo 15</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Librerías para generar archivos Office -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC" class="logo-img">
+                <span class="logo-text">Gestión de Proyectos</span>
+            </a>
+            <div class="project-info">
+                <div class="project-title">GPY2202 - Semana 6 (Experiencia 2)</div>
+                <div class="project-meta">Grupo 15 • Sebastian Briceño</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link active">🏠 Inicio</a>
+            <a href="riesgos.html" class="nav-link">⚠️ Matriz de Riesgos</a>
+            <a href="monitoreo.html" class="nav-link">📊 Monitoreo</a>
+            <a href="performance.html" class="nav-link">📈 Performance (EVM)</a>
+            <a href="cambios.html" class="nav-link">🔄 Solicitudes de Cambio</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Gestión de Riesgos y Performance<br><span class="highlight">Intranet Corporativa 2.0 - Konecta</span></h1>
+            <p>Informe completo de gestión de riesgos, monitoreo y análisis de performance del proyecto al cierre de la Semana 10 (45% del tiempo transcurrido)</p>
+            
+            <div class="status-badge yellow">
+                🟡 ESTADO: AMARILLO - Requiere Atención Gerencial
+            </div>
+        </section>
+
+        <!-- Métricas Clave -->
+        <section class="section">
+            <h2 class="section-title">📊 Métricas Clave del Proyecto (Semana 10)</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Avance Real</div>
+                    <div class="metric-value">48%</div>
+                    <div class="metric-status">
+                        <span style="color: #10b981;">✓ Adelante +3% del plan</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">SPI (Cronograma)</div>
+                    <div class="metric-value" style="color: #10b981;">1.07</div>
+                    <div class="metric-status">
+                        <span style="color: #10b981;">✓ Eficiente +7%</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">CPI (Costo)</div>
+                    <div class="metric-value" style="color: #ef4444;">0.83</div>
+                    <div class="metric-status">
+                        <span style="color: #ef4444;">⚠ Sobre presupuesto -17%</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">EAC Proyectado</div>
+                    <div class="metric-value" style="color: #ef4444;">$115M</div>
+                    <div class="metric-status">
+                        <span style="color: #ef4444;">⚠ Sobrecosto +$15M</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Riesgos Altos</div>
+                    <div class="metric-value" style="color: #f59e0b;">4</div>
+                    <div class="metric-status">
+                        <span style="color: #f59e0b;">⚠ Requiere atención</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Entregables</div>
+                    <div class="metric-value">8/15</div>
+                    <div class="metric-status">
+                        <span style="color: #10b981;">✓ 53% completados</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Box Contexto -->
+        <div class="info-box">
+            <h3>📌 Sobre este Informe</h3>
+            <p><strong>Período de Análisis:</strong> Semana 10 (15-21 Junio 2026) - Finalización de Sprint 2</p>
+            <p><strong>Objetivo:</strong> Este informe presenta el estado completo de la gestión de riesgos y análisis de performance (Earned Value Management) del proyecto Intranet Corporativa 2.0 al 45% de su duración.</p>
+            <p><strong>Alcance:</strong> 15 riesgos identificados y gestionados, métricas de EVM completas, 7 solicitudes de cambio evaluadas, y análisis de 3 escenarios de recuperación.</p>
+        </div>
+
+        <!-- Secciones Principales -->
+        <h2 style="font-size: 2rem; font-weight: 600; margin: 3rem 0 2rem;">📚 Documentos de la Experiencia 2</h2>
+        
+        <div class="cards-grid">
+            <!-- Matriz de Riesgos -->
+            <a href="riesgos.html" class="card">
+                <div class="card-icon">⚠️</div>
+                <h3 class="card-title">Matriz de Riesgos</h3>
+                <p class="card-description">15 riesgos identificados, evaluados cualitativamente con probabilidad e impacto. Incluye estrategias de respuesta y planes de acción detallados.</p>
+                <div class="card-meta">
+                    <span>15 riesgos • 4 altos activos</span>
+                    <span class="card-badge yellow">Monitoreo Activo</span>
+                </div>
+            </a>
+
+            <!-- Informe de Monitoreo -->
+            <a href="monitoreo.html" class="card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Informe de Monitoreo</h3>
+                <p class="card-description">Estado actualizado de riesgos a Semana 10: 1 riesgo materializado (R01), 2 nuevos identificados, análisis de tendencias y proyecciones.</p>
+                <div class="card-meta">
+                    <span>1 materializado • 2 nuevos</span>
+                    <span class="card-badge yellow">Requiere Atención</span>
+                </div>
+            </a>
+
+            <!-- Performance EVM -->
+            <a href="performance.html" class="card">
+                <div class="card-icon">📈</div>
+                <h3 class="card-title">Informe de Performance (EVM)</h3>
+                <p class="card-description">Análisis completo de Earned Value Management con métricas de cronograma, costo y proyecciones. Incluye 3 escenarios de recuperación.</p>
+                <div class="card-meta">
+                    <span>SPI: 1.07 • CPI: 0.83</span>
+                    <span class="card-badge yellow">Sobrecosto Proyectado</span>
+                </div>
+            </a>
+
+            <!-- Solicitudes de Cambio -->
+            <a href="cambios.html" class="card">
+                <div class="card-icon">🔄</div>
+                <h3 class="card-title">Gestión de Cambios</h3>
+                <p class="card-description">7 solicitudes de cambio recibidas: 3 aprobadas, 2 rechazadas, 2 diferidas. Análisis de impacto completo en alcance, cronograma y costo.</p>
+                <div class="card-meta">
+                    <span>3 aprobadas • 2 rechazadas</span>
+                    <span class="card-badge green">Controlado</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Resumen de Estado -->
+        <section class="section">
+            <h2 class="section-title">🎯 Resumen Ejecutivo</h2>
+            
+            <div class="success-box">
+                <h3>✅ Fortalezas del Proyecto</h3>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Cronograma Adelantado:</strong> SPI = 1.07, estamos 7% adelante en tiempo</li>
+                    <li><strong>Calidad Alta:</strong> 84% cobertura de pruebas, 0 bugs críticos en producción</li>
+                    <li><strong>Satisfacción de Usuarios:</strong> NPS +42, puntuación 4.2/5.0 en validaciones</li>
+                    <li><strong>Entregas Consistentes:</strong> 8 de 15 entregables completados (53%), todos aceptados</li>
+                    <li><strong>Gestión Proactiva:</strong> 15 riesgos identificados y gestionados efectivamente</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Desafíos del Proyecto</h3>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Sobrecosto del 20%:</strong> CPI = 0.83, proyección de $115M vs. $100M presupuestado</li>
+                    <li><strong>4 Riesgos Altos Activos:</strong> R01 (Integraciones), R02 (Resistencia), R03 (Requisitos), R16 (APIs)</li>
+                    <li><strong>1 Riesgo Materializado:</strong> R01 causó +$3.5M y +1.5 semanas de retraso</li>
+                    <li><strong>Cambios de Alcance:</strong> 7 solicitudes recibidas, 3 aprobadas (+$10M, +6 semanas impacto total)</li>
+                    <li><strong>Reserva Casi Agotada:</strong> $9.5M disponibles vs. $12.5M proyectados necesarios</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>🎯 Recomendación: Escenario C - Reducir Alcance</h3>
+                <p><strong>Go-Live:</strong> 31-Agosto-2026 (fecha original mantenida) ✓</p>
+                <p><strong>Costo Final:</strong> $112M (+12% sobrecosto controlado)</p>
+                <p><strong>Alcance:</strong> 95% (diferir módulo de encuestas a Fase 2)</p>
+                <p><strong>Riesgo:</strong> BAJO (escenario más factible y realista)</p>
+                <p style="margin-top: 1rem;"><strong>Acciones Clave:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li>Establecer "change freeze" desde Semana 12</li>
+                    <li>Aprobar Escenario C con Sponsor</li>
+                    <li>Sprint de corrección: resolver 8 bugs altos</li>
+                    <li>Monitoreo diario de riesgos críticos (R01, R03, R16)</li>
+                    <li>Agregar 2 desarrolladores en Sprint 3 para recuperar tiempo</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Progreso del Proyecto -->
+        <section class="section">
+            <h2 class="section-title">📅 Progreso del Proyecto</h2>
+            
+            <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem;">Tiempo Transcurrido</h3>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 45%;">45% (10 de 22 semanas)</div>
+            </div>
+
+            <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem;">Avance Real del Alcance</h3>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 48%;">48% completado (adelante +3%)</div>
+            </div>
+
+            <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem;">Presupuesto Consumido</h3>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 48%; background: linear-gradient(90deg, #f59e0b 0%, #dc2626 100%);">
+                    $48M de $100M (sobre presupuesto)
+                </div>
+            </div>
+        </section>
+
+        <!-- Distribución de Riesgos -->
+        <section class="section">
+            <h2 class="section-title">⚠️ Distribución de Riesgos</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card" style="border-left: 4px solid #991b1b;">
+                    <div class="metric-label">Riesgos Críticos</div>
+                    <div class="metric-value" style="color: #991b1b;">0</div>
+                    <div class="metric-status">Nivel 20-25</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #dc2626;">
+                    <div class="metric-label">Riesgos Altos</div>
+                    <div class="metric-value" style="color: #dc2626;">4</div>
+                    <div class="metric-status">Nivel 15-19</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #f59e0b;">
+                    <div class="metric-label">Riesgos Medios</div>
+                    <div class="metric-value" style="color: #f59e0b;">4</div>
+                    <div class="metric-status">Nivel 10-14</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #fbbf24;">
+                    <div class="metric-label">Riesgos Bajos</div>
+                    <div class="metric-value" style="color: #fbbf24;">6</div>
+                    <div class="metric-status">Nivel 5-9</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #10b981;">
+                    <div class="metric-label">Riesgos Muy Bajos</div>
+                    <div class="metric-value" style="color: #10b981;">1</div>
+                    <div class="metric-status">Nivel 1-4</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #667eea;">
+                    <div class="metric-label">Total Riesgos</div>
+                    <div class="metric-value" style="color: #667eea;">15</div>
+                    <div class="metric-status">Todos documentados</div>
+                </div>
+            </div>
+
+            <div class="table-container" style="margin-top: 2rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Top 5 Riesgos Críticos</th>
+                            <th>Categoría</th>
+                            <th>Nivel</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>R01:</strong> Complejidad Integraciones Legacy</td>
+                            <td>Técnico</td>
+                            <td class="risk-high">16 - Alto 🔴</td>
+                            <td>MATERIALIZADO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R02:</strong> Resistencia al Cambio (Sucursales)</td>
+                            <td>Organizacional</td>
+                            <td class="risk-high">16 - Alto 🔴</td>
+                            <td>EN MITIGACIÓN</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R03:</strong> Requisitos Cambiantes</td>
+                            <td>Gestión</td>
+                            <td class="risk-high">16 - Alto 🔴</td>
+                            <td>ESCALADO ⬆️</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R16:</strong> Retraso APIs Nómina (NUEVO)</td>
+                            <td>Técnico</td>
+                            <td class="risk-high">16 - Alto 🔴</td>
+                            <td>IDENTIFICADO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R04:</strong> Problemas de Rendimiento</td>
+                            <td>Técnico</td>
+                            <td class="risk-medium">12 - Medio 🟠</td>
+                            <td>CONTROLADO ⬇️</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Cambios de Alcance -->
+        <section class="section">
+            <h2 class="section-title">🔄 Gestión de Cambios</h2>
+            
+            <p class="section-description">Se han recibido 7 solicitudes de cambio durante la ejecución del proyecto. A continuación el resumen de decisiones:</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card" style="border-left: 4px solid #10b981;">
+                    <div class="metric-label">Aprobadas</div>
+                    <div class="metric-value" style="color: #10b981;">3</div>
+                    <div class="metric-status">Impacto: +$10M, +6 sem</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #ef4444;">
+                    <div class="metric-label">Rechazadas</div>
+                    <div class="metric-value" style="color: #ef4444;">2</div>
+                    <div class="metric-status">Diferidas a Fase 2</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #f59e0b;">
+                    <div class="metric-label">Pendientes</div>
+                    <div class="metric-value" style="color: #f59e0b;">2</div>
+                    <div class="metric-status">Requieren decisión</div>
+                </div>
+            </div>
+
+            <div class="table-container" style="margin-top: 2rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Solicitud de Cambio</th>
+                            <th>Impacto Costo</th>
+                            <th>Impacto Tiempo</th>
+                            <th>Decisión</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>C001</strong></td>
+                            <td>Flujo Multi-Nivel Aprobación Vacaciones</td>
+                            <td>+$3M</td>
+                            <td>+3.5 sem</td>
+                            <td class="risk-verylow">✅ APROBADO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C002</strong></td>
+                            <td>Cálculo Días Hábiles Brasil</td>
+                            <td>+$1M</td>
+                            <td>+0.5 sem</td>
+                            <td class="risk-verylow">✅ APROBADO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C003</strong></td>
+                            <td>Módulo de Encuestas Satisfacción</td>
+                            <td>+$3M</td>
+                            <td>+1 sem</td>
+                            <td class="risk-verylow">✅ APROBADO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C004</strong></td>
+                            <td>Módulo de Banco de Horas</td>
+                            <td>+$5M</td>
+                            <td>+3 sem</td>
+                            <td class="risk-high">❌ RECHAZADO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C005</strong></td>
+                            <td>Firma Electrónica Brasil (Legal)</td>
+                            <td>+$28.5M</td>
+                            <td>+5.5 sem</td>
+                            <td class="risk-medium">⏳ PENDIENTE</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C006</strong></td>
+                            <td>Integración Microsoft Teams</td>
+                            <td>+$12M</td>
+                            <td>+6 sem</td>
+                            <td class="risk-high">❌ RECHAZADO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C007</strong></td>
+                            <td>App Móvil Nativa (iOS/Android)</td>
+                            <td>+$15M</td>
+                            <td>+8 sem</td>
+                            <td class="risk-medium">⏸️ DIFERIDO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="info-box" style="text-align: center; padding: 3rem; margin-top: 4rem;">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">📋 Explora los Documentos Completos</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Accede a la documentación detallada de gestión de riesgos, monitoreo y performance del proyecto.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="riesgos.html" style="padding: 1rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Ver Matriz de Riesgos</a>
+                <a href="performance.html" style="padding: 1rem 2rem; background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Ver Performance EVM</a>
+                <a href="cambios.html" style="padding: 1rem 2rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Ver Solicitudes de Cambio</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>GPY2202 - Gestión de Proyectos - Experiencia 2</strong></p>
+            <p>Proyecto: Intranet Corporativa 2.0 - Konecta</p>
+            <p>Jefe de Proyecto: Sebastian Briceño • Grupo 15</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">DUOC UC - Abril 2026</p>
+        </div>
+    </footer>
+
+    <!-- Barra de Descarga Flotante -->
+    <div class="download-bar" id="downloadBar">
+        <button class="download-bar-close" onclick="document.getElementById('downloadBar').classList.add('hidden')">×</button>
+        <h3><span>📥</span> Descargar Documentos</h3>
+        <div class="download-buttons">
+            <button class="btn-download primary" onclick="descargarTodosDocumentos()">
+                <span>📦 Descargar Todos</span>
+                <span class="icon">↓</span>
+            </button>
+            <button class="btn-download" onclick="descargarMatrizRiesgos()">
+                <span>📊 Matriz de Riesgos (Excel)</span>
+                <span class="icon">↓</span>
+            </button>
+            <button class="btn-download" onclick="descargarInformeMonitoreo()">
+                <span>📋 Informe Monitoreo (Word)</span>
+                <span class="icon">↓</span>
+            </button>
+            <button class="btn-download" onclick="descargarInformePerformance()">
+                <span>📈 Informe Performance (Word)</span>
+                <span class="icon">↓</span>
+            </button>
+            <button class="btn-download" onclick="descargarSolicitudesCambio()">
+                <span>🔄 Solicitudes Cambio (Word)</span>
+                <span class="icon">↓</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/downloads.js"></script>
+    <script>
+        // Animación de barras de progreso al cargar
+        window.addEventListener('load', function() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

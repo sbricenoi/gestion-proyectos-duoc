@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo de Riesgos - Intranet Konecta | Grupo 15</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Librerías para generar archivos Office -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC" class="logo-img">
+                <span class="logo-text">Gestión de Proyectos</span>
+            </a>
+            <div class="project-info">
+                <div class="project-title">GPY2202 - Semana 6 (Experiencia 2)</div>
+                <div class="project-meta">Grupo 15 • Sebastian Briceño</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link">🏠 Inicio</a>
+            <a href="riesgos.html" class="nav-link">⚠️ Matriz de Riesgos</a>
+            <a href="monitoreo.html" class="nav-link active">📊 Monitoreo</a>
+            <a href="performance.html" class="nav-link">📈 Performance (EVM)</a>
+            <a href="cambios.html" class="nav-link">🔄 Solicitudes de Cambio</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">📊 Informe de Monitoreo de Riesgos</h1>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">Período: Semana 10 (15-21 Junio 2026) | Fase: Sprint 2 Finalizado</p>
+
+        <!-- Resumen Ejecutivo -->
+        <div class="hero">
+            <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Resumen Ejecutivo</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #667eea;">15</div>
+                    <div style="color: #666;">Riesgos Totales</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">14</div>
+                    <div style="color: #666;">Riesgos Activos</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #ef4444;">1</div>
+                    <div style="color: #666;">Materializado</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #f59e0b;">2</div>
+                    <div style="color: #666;">Nuevos Identificados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Riesgo Materializado -->
+        <section class="section">
+            <h2 class="section-title">🔴 Riesgos Materializados</h2>
+            
+            <div class="danger-box">
+                <h3>R01: Complejidad de Integración con Sistemas Legacy - MATERIALIZADO</h3>
+                
+                <p style="margin: 1rem 0;"><strong>📅 Timeline del Evento:</strong></p>
+                <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0;">
+                        <div style="width: 120px; font-weight: 600;">Semana 8</div>
+                        <div style="flex: 1; background: #fee2e2; padding: 0.75rem; border-radius: 6px;">🔴 Riesgo se Materializa: APIs no documentadas, SOAP obsoleto</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0;">
+                        <div style="width: 120px; font-weight: 600;">Semana 9</div>
+                        <div style="flex: 1; background: #fef3c7; padding: 0.75rem; border-radius: 6px;">⚙️ Plan Activado: Consultor contratado, Plan B iniciado</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0;">
+                        <div style="width: 120px; font-weight: 600;">Semana 10</div>
+                        <div style="flex: 1; background: #fef3c7; padding: 0.75rem; border-radius: 6px;">🟡 En Resolución: Adapter desarrollado 80%</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0;">
+                        <div style="width: 120px; font-weight: 600;">Semana 12</div>
+                        <div style="flex: 1; background: #d1fae5; padding: 0.75rem; border-radius: 6px;">✅ Esperado Cierre: Integración completada</div>
+                    </div>
+                </div>
+
+                <p style="margin: 1rem 0;"><strong>💥 Impacto Real del Riesgo:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Cronograma:</strong> +1.5 semanas de retraso en Sprint 2</li>
+                    <li><strong>Costo:</strong> +$3.5M en consultor externo</li>
+                    <li><strong>Alcance:</strong> Funcionalidades avanzadas diferidas a Fase 2</li>
+                    <li><strong>Equipo:</strong> 60% del tiempo del Líder Técnico dedicado a este problema</li>
+                </ul>
+
+                <p style="margin: 1rem 0;"><strong>✅ Efectividad del Plan: ⭐⭐⭐⭐ (4/5)</strong></p>
+                <p>El plan de mitigación funcionó bien. La contratación anticipada del consultor y el Plan B evitaron un retraso mayor de 4+ semanas.</p>
+
+                <p style="margin: 1rem 0;"><strong>📚 Lecciones Aprendidas:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Realizar análisis técnico de integraciones ANTES de Sprint 1, no durante</li>
+                    <li>Incluir pruebas de concepto (PoC) en fase de diseño</li>
+                    <li>Presupuestar más buffer para integraciones legacy (20% vs. 15%)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Riesgos que Cambiaron -->
+        <section class="section">
+            <h2 class="section-title">📈 Riesgos que Cambiaron de Nivel</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Riesgo</th>
+                            <th>Nivel Anterior</th>
+                            <th>Nivel Actual</th>
+                            <th>Cambio</th>
+                            <th>Razón</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>R03:</strong> Requisitos Cambiantes</td>
+                            <td class="risk-high">16 - Alto</td>
+                            <td class="risk-critical">20 - Crítico</td>
+                            <td>⬆️ ESCALADO</td>
+                            <td>Director RRHH solicitó 3 cambios mayores en Semana 9</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R04:</strong> Problemas de Rendimiento</td>
+                            <td class="risk-medium">12 - Medio</td>
+                            <td class="risk-low">8 - Bajo</td>
+                            <td>⬇️ MEJORADO</td>
+                            <td>Pruebas de carga exitosas: 3000 usuarios < 2.5 seg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Nuevos Riesgos -->
+        <section class="section">
+            <h2 class="section-title">🆕 Nuevos Riesgos Identificados</h2>
+            
+            <div class="warning-box">
+                <h3>R16: Retraso en Entrega de APIs del Sistema de Nómina</h3>
+                <p><strong>Nivel:</strong> 16 - Alto 🔴 | <strong>Identificado:</strong> Semana 10</p>
+                <p style="margin: 1rem 0;"><strong>Descripción:</strong> Proveedor del sistema de nómina informó que APIs no estarán listas hasta Semana 13 (vs. Semana 11 comprometida). Retraso de 2 semanas en módulo de liquidaciones.</p>
+                <p><strong>Plan de Acción:</strong> Reunión urgente con VP proveedor | Desarrollar scraper temporal como Plan B | Penalidades en contrato futuro</p>
+                <p><strong>Responsable:</strong> Director de TI | <strong>Monitoreo:</strong> Diario hasta resolución</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>R17: Falta de Participación de Brasil en Validaciones</h3>
+                <p><strong>Nivel:</strong> 12 - Medio 🟠 | <strong>Identificado:</strong> Semana 10</p>
+                <p style="margin: 1rem 0;"><strong>Descripción:</strong> Usuarios piloto de Brasil cancelaron 2 de 3 sesiones de validación por "falta de tiempo". Funcionalidades para Brasil podrían no ser validadas a tiempo.</p>
+                <p><strong>Plan de Acción:</strong> Reprogramar en horario alternativo (14:00-15:00 Brasil) | Escalar a Director General | Feedback asincrónico vía formularios</p>
+                <p><strong>Responsable:</strong> Director de RRHH | <strong>Monitoreo:</strong> Semanal</p>
+            </div>
+        </section>
+
+        <!-- Tendencias -->
+        <section class="section">
+            <h2 class="section-title">📈 Análisis de Tendencias</h2>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Evolución de Riesgos Altos (Últimas 5 Semanas)</h3>
+                <canvas id="trendChart" style="max-height: 300px;"></canvas>
+            </div>
+
+            <div class="info-box" style="margin-top: 2rem;">
+                <h3>📊 Interpretación de Tendencias</h3>
+                <p><strong>Semanas 6-7:</strong> 3 riesgos altos estables (monitoreo normal)</p>
+                <p><strong>Semana 8:</strong> ⬆️ Incremento a 4 riesgos (R01 materializado)</p>
+                <p><strong>Semana 9:</strong> ⬆️ Incremento a 5 riesgos (R03 escalado a crítico)</p>
+                <p><strong>Semana 10:</strong> ⬇️ Mejora a 4 riesgos (R04 descendió a bajo)</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: #f59e0b;">📌 Tendencia: AL ALZA CONTROLADA. Acciones correctivas están funcionando pero se requiere atención sostenida.</p>
+            </div>
+        </section>
+
+        <!-- KRIs -->
+        <section class="section">
+            <h2 class="section-title">🎯 Indicadores Clave de Riesgos (KRIs)</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th>Valor Actual</th>
+                            <th>Umbral Verde</th>
+                            <th>Umbral Amarillo</th>
+                            <th>Umbral Rojo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Riesgos altos activos</td>
+                            <td><strong>4</strong></td>
+                            <td>≤ 2</td>
+                            <td>3-4</td>
+                            <td>≥ 5</td>
+                            <td class="risk-low">🟡</td>
+                        </tr>
+                        <tr>
+                            <td>Riesgos materializados</td>
+                            <td><strong>1</strong></td>
+                            <td>0</td>
+                            <td>1-2</td>
+                            <td>≥ 3</td>
+                            <td class="risk-low">🟡</td>
+                        </tr>
+                        <tr>
+                            <td>% planes ejecutados</td>
+                            <td><strong>85%</strong></td>
+                            <td>≥ 90%</td>
+                            <td>70-89%</td>
+                            <td>< 70%</td>
+                            <td class="risk-low">🟡</td>
+                        </tr>
+                        <tr>
+                            <td>Exposición monetaria</td>
+                            <td><strong>$52M</strong></td>
+                            <td>< $30M</td>
+                            <td>$30-60M</td>
+                            <td>> $60M</td>
+                            <td class="risk-low">🟡</td>
+                        </tr>
+                        <tr>
+                            <td>Escalamientos hacia arriba</td>
+                            <td><strong>2</strong></td>
+                            <td>0</td>
+                            <td>1-2</td>
+                            <td>≥ 3</td>
+                            <td class="risk-low">🟡</td>
+                        </tr>
+                        <tr>
+                            <td>Nuevos riesgos por semana</td>
+                            <td><strong>0.5</strong></td>
+                            <td>≤ 1</td>
+                            <td>1-2</td>
+                            <td>≥ 3</td>
+                            <td class="risk-verylow">🟢</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box" style="margin-top: 2rem;">
+                <h3>⚠️ Estado General de KRIs: AMARILLO</h3>
+                <p>5 de 6 indicadores están en umbral amarillo. Requiere atención gerencial pero no es crítico. La mayoría de indicadores están en límite superior de amarillo, próximos a verde.</p>
+            </div>
+        </section>
+
+        <!-- Efectividad de Planes -->
+        <section class="section">
+            <h2 class="section-title">⭐ Efectividad de Planes de Respuesta</h2>
+            
+            <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Planes que Están Funcionando Bien ✅</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Riesgo</th>
+                            <th>Estrategia</th>
+                            <th>Efectividad</th>
+                            <th>Evidencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>R02:</strong> Resistencia al Cambio</td>
+                            <td>Mitigar</td>
+                            <td class="risk-verylow">⭐⭐⭐⭐⭐ 5/5</td>
+                            <td>78% aceptación positiva. Embajadores activos en 4 países</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R04:</strong> Rendimiento</td>
+                            <td>Mitigar</td>
+                            <td class="risk-verylow">⭐⭐⭐⭐⭐ 5/5</td>
+                            <td>Pruebas exitosas. Riesgo descendió de nivel</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R05:</strong> Disponibilidad Stakeholders</td>
+                            <td>Mitigar</td>
+                            <td class="risk-verylow">⭐⭐⭐⭐ 4/5</td>
+                            <td>Solo 1 cancelación en 10 semanas. Agendamiento anticipado funciona</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R06:</strong> Vulnerabilidades</td>
+                            <td>Mitigar</td>
+                            <td class="risk-verylow">⭐⭐⭐⭐ 4/5</td>
+                            <td>SonarQube detectó y corrigió 12 issues. Sin vulnerabilidades críticas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Planes que Necesitan Ajuste ⚠️</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Riesgo</th>
+                            <th>Efectividad</th>
+                            <th>Acción Correctiva</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>R01:</strong> Integraciones Legacy</td>
+                            <td class="risk-low">⭐⭐⭐ 3/5</td>
+                            <td>Aumentar buffer para integraciones. Análisis técnico más profundo en diseño</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R03:</strong> Requisitos Cambiantes</td>
+                            <td class="risk-high">⭐⭐ 2/5</td>
+                            <td>Fortalecer Comité de Control. Sponsor debe participar. Change freeze obligatorio</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R07:</strong> Rotación Personal</td>
+                            <td class="risk-low">⭐⭐⭐ 3/5</td>
+                            <td>1 desarrollador renunció. Handover tomó 1.5 sem. Incrementar knowledge sharing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Watch List -->
+        <section class="section">
+            <h2 class="section-title">👁️ Watch List - Riesgos Próximos a Materializarse</h2>
+            
+            <div class="danger-box">
+                <h3>Próximas 2 Semanas (Semanas 11-12)</h3>
+                <div class="table-container" style="margin-top: 1rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Riesgo</th>
+                                <th>Probabilidad</th>
+                                <th>Trigger Activo</th>
+                                <th>Acción Preventiva</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>R16:</strong> Retraso APIs Nómina</td>
+                                <td class="risk-high">70%</td>
+                                <td>✅ Proveedor confirmó retraso</td>
+                                <td>Activar Plan B si APIs no están en Semana 11</td>
+                            </tr>
+                            <tr>
+                                <td><strong>R03:</strong> Requisitos Cambiantes</td>
+                                <td class="risk-medium">50%</td>
+                                <td>✅ Stakeholders pidiendo más cambios</td>
+                                <td>Reunión Sponsor para change freeze</td>
+                            </tr>
+                            <tr>
+                                <td><strong>R07:</strong> Rotación Personal</td>
+                                <td class="risk-low">35%</td>
+                                <td>⚠️ 1 dev en entrevistas externas</td>
+                                <td>Reunión 1:1, evaluar incentivos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consumo de Contingencia -->
+        <section class="section">
+            <h2 class="section-title">💰 Consumo de Reserva de Contingencia</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Reserva Original</div>
+                    <div class="metric-value">$13M</div>
+                    <div class="metric-status">13% del presupuesto</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #ef4444;">
+                    <div class="metric-label">Consumido</div>
+                    <div class="metric-value" style="color: #ef4444;">$3.5M</div>
+                    <div class="metric-status">27% de la reserva</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #10b981;">
+                    <div class="metric-label">Disponible</div>
+                    <div class="metric-value" style="color: #10b981;">$9.5M</div>
+                    <div class="metric-status">73% de la reserva</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #f59e0b;">
+                    <div class="metric-label">Proyectado Adicional</div>
+                    <div class="metric-value" style="color: #f59e0b;">$9M</div>
+                    <div class="metric-status">Cambios aprobados pendientes</div>
+                </div>
+            </div>
+
+            <div class="progress-container" style="height: 40px; margin: 2rem 0;">
+                <div class="progress-bar" style="width: 27%; background: #ef4444;">Consumido: $3.5M (27%)</div>
+                <div style="position: absolute; right: 10px; top: 8px; color: white; font-weight: 600;">Disponible: $9.5M (73%)</div>
+            </div>
+
+            <div class="danger-box">
+                <h3>🔴 Alerta: Reserva Casi Agotada</h3>
+                <p><strong>Proyección de consumo total:</strong> $12.5M de $13M (96%)</p>
+                <p style="margin-top: 0.5rem;"><strong>Desglose proyectado:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Ya consumido (R01): $3.5M ✓</li>
+                    <li>Cambios aprobados pendientes (R03): $7M estimados</li>
+                    <li>Retraso APIs (R16): $2M estimados</li>
+                    <li><strong>Total:</strong> $12.5M (96% de la reserva)</li>
+                </ul>
+                <p style="margin-top: 1rem; font-weight: 600; color: #991b1b;">⚠️ RECOMENDACIÓN: Solicitar extensión de $5M adicionales al Sponsor o congelar cambios de alcance.</p>
+            </div>
+        </section>
+
+        <!-- Proyección de Escenarios -->
+        <section class="section">
+            <h2 class="section-title">🔮 Proyección para Próximas 4 Semanas</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div class="success-box">
+                    <h3>🟢 Escenario Optimista (30%)</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 2;">
+                        <li>R01 resuelto en Semana 12</li>
+                        <li>R03 estabilizado con freeze</li>
+                        <li>R16 APIs entregadas a tiempo</li>
+                        <li><strong>Resultado:</strong> 2 riesgos altos</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h3>🟡 Escenario Realista (55%)</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 2;">
+                        <li>R01 parcialmente resuelto</li>
+                        <li>R03 controlado pero crítico</li>
+                        <li>R16 con retraso adicional</li>
+                        <li><strong>Resultado:</strong> 3-4 riesgos altos</li>
+                    </ul>
+                </div>
+
+                <div class="danger-box">
+                    <h3>🔴 Escenario Pesimista (15%)</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 2;">
+                        <li>R01 sin resolución, impacta Sprint 3</li>
+                        <li>R03 con más cambios solicitados</li>
+                        <li>R16 retraso > 3 semanas</li>
+                        <li><strong>Resultado:</strong> 5+ riesgos, proyecto en riesgo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recomendaciones -->
+        <div class="info-box" style="margin-top: 3rem;">
+            <h3>🚀 Acciones Inmediatas (Próxima Semana)</h3>
+            <ol style="margin-left: 1.5rem; line-height: 2;">
+                <li><strong>🔴 CRÍTICO:</strong> Escalar R16 a VP de proveedor. Meta: Confirmar entrega en Semana 11</li>
+                <li><strong>🔴 CRÍTICO:</strong> Reunión con Sponsor sobre R03. Solicitar change freeze desde Semana 12</li>
+                <li><strong>🟡 IMPORTANTE:</strong> Monitorear diariamente R01. Decisión Go/No-Go para Plan B en Semana 11</li>
+                <li><strong>🟡 IMPORTANTE:</strong> Sesiones de retención 1:1 con cada miembro del equipo (prevenir R07)</li>
+                <li><strong>🟢 PREVENCIÓN:</strong> Validar fecha definitiva sesiones con Brasil (R17)</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>GPY2202 - Gestión de Proyectos - Experiencia 2</strong></p>
+            <p>Informe de Monitoreo de Riesgos</p>
+            <p>Jefe de Proyecto: Sebastian Briceño • Grupo 15</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">DUOC UC - Abril 2026</p>
+        </div>
+    </footer>
+
+    <!-- Barra de Descarga Flotante -->
+    <div class="download-bar" id="downloadBar">
+        <button class="download-bar-close" onclick="document.getElementById('downloadBar').classList.add('hidden')">×</button>
+        <h3><span>📥</span> Descargar Documentos</h3>
+        <div class="download-buttons">
+            <button class="btn-download primary" onclick="descargarInformeMonitoreo()">
+                <span>📋 Informe Monitoreo (Word)</span>
+                <span class="icon">↓</span>
+            </button>
+            <button class="btn-download" onclick="descargarTodosDocumentos()">
+                <span>📦 Todos los Documentos</span>
+                <span class="icon">↓</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/downloads.js"></script>
+    <script>
+        // Gráfico de Tendencias
+        const trendCtx = document.getElementById('trendChart').getContext('2d');
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: ['Semana 6', 'Semana 7', 'Semana 8', 'Semana 9', 'Semana 10'],
+                datasets: [{
+                    label: 'Cantidad de Riesgos Altos',
+                    data: [3, 3, 4, 5, 4],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#ef4444'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: false
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 6,
+                        ticks: {
+                            stepSize: 1
+                        },
+                        title: {
+                            display: true,
+                            text: 'Cantidad de Riesgos Altos'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Período'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

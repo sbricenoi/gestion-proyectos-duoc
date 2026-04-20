@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance del Trabajo (EVM) - Intranet Konecta | Grupo 15</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Librerías para generar archivos Office -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC" class="logo-img">
+                <span class="logo-text">Gestión de Proyectos</span>
+            </a>
+            <div class="project-info">
+                <div class="project-title">GPY2202 - Semana 6 (Experiencia 2)</div>
+                <div class="project-meta">Grupo 15 • Sebastian Briceño</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link">🏠 Inicio</a>
+            <a href="riesgos.html" class="nav-link">⚠️ Matriz de Riesgos</a>
+            <a href="monitoreo.html" class="nav-link">📊 Monitoreo</a>
+            <a href="performance.html" class="nav-link active">📈 Performance (EVM)</a>
+            <a href="cambios.html" class="nav-link">🔄 Solicitudes de Cambio</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">📈 Informe del Performance del Trabajo</h1>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">Earned Value Management (EVM) - Semana 10 (21 de Junio 2026)</p>
+
+        <!-- Estado General -->
+        <div class="hero" style="margin-bottom: 3rem;">
+            <div class="status-badge yellow">
+                🟡 SEMÁFORO GENERAL: AMARILLO - Atención Requerida
+            </div>
+            <p style="margin-top: 1rem; font-size: 1.1rem;">El proyecto está <strong>adelantado +3% en cronograma</strong> pero con <strong>sobrecosto del 20%</strong>. Se requieren acciones correctivas para controlar el presupuesto manteniendo el buen desempeño en tiempo.</p>
+        </div>
+
+        <!-- Métricas EVM -->
+        <section class="section">
+            <h2 class="section-title">💰 Métricas de Earned Value Management (EVM)</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card" style="border-left: 4px solid #667eea;">
+                    <div class="metric-label">PV (Planned Value)</div>
+                    <div class="metric-value" style="font-size: 2rem;">$45M</div>
+                    <div class="metric-status">Valor planificado a gastar</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #10b981;">
+                    <div class="metric-label">EV (Earned Value)</div>
+                    <div class="metric-value" style="font-size: 2rem;">$48M</div>
+                    <div class="metric-status">Valor del trabajo completado</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #ef4444;">
+                    <div class="metric-label">AC (Actual Cost)</div>
+                    <div class="metric-value" style="font-size: 2rem;">$48M</div>
+                    <div class="metric-status">Costo real incurrido</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #10b981;">
+                    <div class="metric-label">SV (Schedule Variance)</div>
+                    <div class="metric-value" style="font-size: 1.8rem; color: #10b981;">+$3M</div>
+                    <div class="metric-status">Adelante en cronograma</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #10b981;">
+                    <div class="metric-label">SPI (Schedule Index)</div>
+                    <div class="metric-value" style="color: #10b981;">1.07</div>
+                    <div class="metric-status">Eficiente +7%</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #ef4444;">
+                    <div class="metric-label">CPI (Cost Index)</div>
+                    <div class="metric-value" style="color: #ef4444;">0.83</div>
+                    <div class="metric-status">Ineficiente -17%</div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 2rem;">
+                <h3>📐 Fórmulas Utilizadas</h3>
+                <p><strong>SV (Schedule Variance)</strong> = EV - PV = $48M - $45M = +$3M ✓</p>
+                <p><strong>SPI (Schedule Performance Index)</strong> = EV / PV = $48M / $45M = 1.07 ✓</p>
+                <p><strong>CPI (Cost Performance Index)</strong> = EV / AC = $40M / $48M = 0.83 ⚠️</p>
+                <p style="margin-top: 1rem;"><em>Nota: CPI real ajustado considera que $8M gastados no estaban planificados (consultor externo, cambios).</em></p>
+            </div>
+        </section>
+
+        <!-- Gráfico EVM -->
+        <div class="chart-container">
+            <h3 class="chart-title">📊 Gráfico de Earned Value Management</h3>
+            <canvas id="evmChart" style="max-height: 400px;"></canvas>
+        </div>
+
+        <!-- Proyecciones -->
+        <section class="section">
+            <h2 class="section-title">🔮 Proyecciones al Finalizar</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card" style="border-left: 4px solid #ef4444;">
+                    <div class="metric-label">EAC (Estimate at Completion)</div>
+                    <div class="metric-value" style="font-size: 2rem; color: #ef4444;">$115M</div>
+                    <div class="metric-status">BAC / CPI = $100M / 0.83</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #f59e0b;">
+                    <div class="metric-label">ETC (Estimate to Complete)</div>
+                    <div class="metric-value" style="font-size: 2rem;">$67M</div>
+                    <div class="metric-status">Costo restante proyectado</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #ef4444;">
+                    <div class="metric-label">VAC (Variance at Completion)</div>
+                    <div class="metric-value" style="font-size: 2rem; color: #ef4444;">-$15M</div>
+                    <div class="metric-status">Sobrecosto esperado -15%</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #667eea;">
+                    <div class="metric-label">TCPI (To-Complete Index)</div>
+                    <div class="metric-value" style="font-size: 2rem;">0.78</div>
+                    <div class="metric-status">Eficiencia requerida en resto</div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h3>📊 Interpretación de Proyecciones</h3>
+                <p><strong>EAC = $115M:</strong> Se proyecta sobrecosto de $15M (15%) al finalizar el proyecto si las tendencias actuales continúan.</p>
+                <p><strong>TCPI = 0.78:</strong> Para terminar en $115M, necesitamos mantener CPI = 0.78 en trabajo restante (factible considerando que trabajo pesado de integraciones está terminando).</p>
+                <p style="margin-top: 1rem;"><strong>⚠️ IMPORTANTE:</strong> Para terminar en presupuesto original ($100M), necesitaríamos TCPI = 1.00, lo cual NO es factible dado que actualmente CPI = 0.83.</p>
+            </div>
+        </section>
+
+        <!-- Avance de Entregables -->
+        <section class="section">
+            <h2 class="section-title">📦 Estado de Entregables</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Entregable</th>
+                            <th>% Completado</th>
+                            <th>Estado</th>
+                            <th>Semana</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>E1</strong></td>
+                            <td>Documentación del Proyecto</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 100%;">100%</div></div></td>
+                            <td class="risk-verylow">✅ Completado</td>
+                            <td>Semana 4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E2</strong></td>
+                            <td>Diseño de Arquitectura Técnica</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 100%;">100%</div></div></td>
+                            <td class="risk-verylow">✅ Completado</td>
+                            <td>Semana 6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E3</strong></td>
+                            <td>Diseño UI/UX</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 100%;">100%</div></div></td>
+                            <td class="risk-verylow">✅ Completado</td>
+                            <td>Semana 6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E4</strong></td>
+                            <td>Módulo de Gestión de Contenidos (CMS)</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 100%;">100%</div></div></td>
+                            <td class="risk-verylow">✅ Completado</td>
+                            <td>Sprint 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E5</strong></td>
+                            <td>Módulo de Autoservicio RRHH</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 93%;">93%</div></div></td>
+                            <td class="risk-low">🔄 En Progreso</td>
+                            <td>Sprint 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E6</strong></td>
+                            <td>Módulo de Comunicaciones</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 100%;">100%</div></div></td>
+                            <td class="risk-verylow">✅ Completado</td>
+                            <td>Sprint 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E7</strong></td>
+                            <td>Módulo de Directorio Corporativo</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 100%;">100%</div></div></td>
+                            <td class="risk-verylow">✅ Completado</td>
+                            <td>Sprint 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E8</strong></td>
+                            <td>Sistema de Autenticación y Permisos (SSO)</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 100%;">100%</div></div></td>
+                            <td class="risk-verylow">✅ Completado</td>
+                            <td>Sprint 1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E9</strong></td>
+                            <td>Aplicación Web Responsive</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 100%;">100%</div></div></td>
+                            <td class="risk-verylow">✅ Completado</td>
+                            <td>Sprint 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E10</strong></td>
+                            <td>Integración con Sistemas Legacy</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 65%; background: linear-gradient(90deg, #f59e0b 0%, #dc2626 100%);">65%</div></div></td>
+                            <td class="risk-medium">🔄 Con Problemas</td>
+                            <td>Sprint 2-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E11-15</strong></td>
+                            <td>Entregables Restantes (5)</td>
+                            <td><div class="progress-container"><div class="progress-bar" style="width: 0%;">0%</div></div></td>
+                            <td class="risk-low">⏳ No Iniciados</td>
+                            <td>Semanas 15-22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Presupuesto por Categoría -->
+        <section class="section">
+            <h2 class="section-title">💸 Presupuesto por Categoría</h2>
+            
+            <div class="chart-container">
+                <canvas id="budgetChart" style="max-height: 400px;"></canvas>
+            </div>
+
+            <div class="danger-box" style="margin-top: 2rem;">
+                <h3>🔴 Principal Desviación: Consultoría Externa</h3>
+                <p><strong>Presupuestado:</strong> $5M</p>
+                <p><strong>Gastado:</strong> $12M</p>
+                <p><strong>Variación:</strong> +$7M (+140%) 🔴</p>
+                <p style="margin-top: 1rem;"><strong>Desglose:</strong></p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Consultor integraciones legacy: $5M (Riesgo R01 materializado)</li>
+                    <li>Consultor de seguridad: $2M (Auditoría anticipada)</li>
+                    <li>Soporte técnico especializado: $5M</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Escenarios de Recuperación -->
+        <section class="section">
+            <h2 class="section-title">🎯 Escenarios de Recuperación</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Escenario</th>
+                            <th style="width: 15%;">Go-Live</th>
+                            <th style="width: 15%;">Costo Final</th>
+                            <th style="width: 15%;">Alcance</th>
+                            <th style="width: 15%;">Riesgo</th>
+                            <th style="width: 20%;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Escenario A</strong><br>Recursos Adicionales</td>
+                            <td>31-Ago-2026<br>(Original)</td>
+                            <td class="risk-high">$126M<br>(+26%)</td>
+                            <td>100%</td>
+                            <td class="risk-high">Alto</td>
+                            <td>+2 devs, horas extra, sábados</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Escenario B</strong><br>Retrasar Go-Live</td>
+                            <td class="risk-medium">14-Sep-2026<br>(+2 sem)</td>
+                            <td class="risk-medium">$115M<br>(+15%)</td>
+                            <td>100%</td>
+                            <td class="risk-medium">Medio</td>
+                            <td>Sin recursos adicionales</td>
+                        </tr>
+                        <tr style="background: #d1fae5;">
+                            <td><strong>Escenario C</strong><br>Reducir Alcance<br><span style="font-size: 0.9rem;">⭐ RECOMENDADO</span></td>
+                            <td class="risk-verylow">31-Ago-2026<br>(Original)</td>
+                            <td class="risk-low">$112M<br>(+12%)</td>
+                            <td>95%</td>
+                            <td class="risk-verylow">Bajo</td>
+                            <td>Diferir encuestas, freeze cambios</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="success-box" style="margin-top: 2rem;">
+                <h3>⭐ Recomendación del Jefe de Proyecto: Escenario C</h3>
+                <p><strong>Fundamentos:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li>Mantiene go-live en fecha original (31-Ago)</li>
+                    <li>Sobrecosto controlado al 12% (vs. 15-26% de otros escenarios)</li>
+                    <li>Riesgo BAJO (más factible que Escenario A)</li>
+                    <li>Módulo de encuestas es nice-to-have, puede esperar a Fase 2</li>
+                    <li>Change freeze evita más desviaciones de costo</li>
+                </ul>
+                <p style="margin-top: 1rem; font-weight: 600;">✅ Este escenario balancea costo, cronograma y alcance de forma óptima.</p>
+            </div>
+        </section>
+
+        <!-- Burn Rate -->
+        <section class="section">
+            <h2 class="section-title">🔥 Burn Rate (Tasa de Consumo)</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Burn Rate Planificado</div>
+                    <div class="metric-value">$4.5M</div>
+                    <div class="metric-status">por semana</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #ef4444;">
+                    <div class="metric-label">Burn Rate Real</div>
+                    <div class="metric-value" style="color: #ef4444;">$4.8M</div>
+                    <div class="metric-status">por semana (+7%)</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Semanas Restantes</div>
+                    <div class="metric-value">12</div>
+                    <div class="metric-status">de 22 semanas totales</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Presupuesto Restante</div>
+                    <div class="metric-value">$52M</div>
+                    <div class="metric-status">de $100M original</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calidad -->
+        <section class="section">
+            <h2 class="section-title">✨ Métricas de Calidad</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>Objetivo</th>
+                            <th>Real</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cobertura de Pruebas Unitarias</td>
+                            <td>≥ 80%</td>
+                            <td>84%</td>
+                            <td class="risk-verylow">✅ CUMPLE</td>
+                        </tr>
+                        <tr>
+                            <td>Bugs Críticos en Producción</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="risk-verylow">✅ CUMPLE</td>
+                        </tr>
+                        <tr>
+                            <td>Bugs Altos Pendientes</td>
+                            <td>< 5</td>
+                            <td>8</td>
+                            <td class="risk-high">🔴 NO CUMPLE</td>
+                        </tr>
+                        <tr>
+                            <td>Vulnerabilidades Críticas</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="risk-verylow">✅ CUMPLE</td>
+                        </tr>
+                        <tr>
+                            <td>NPS (Net Promoter Score)</td>
+                            <td>> 30</td>
+                            <td>+42</td>
+                            <td class="risk-verylow">✅ EXCELENTE</td>
+                        </tr>
+                        <tr>
+                            <td>Satisfacción General Usuarios</td>
+                            <td>≥ 4.0 / 5.0</td>
+                            <td>4.2 / 5.0</td>
+                            <td class="risk-verylow">✅ CUMPLE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box" style="margin-top: 2rem;">
+                <h3>⚠️ Acción Requerida: Sprint de Corrección de Bugs</h3>
+                <p>Se requiere 1 semana dedicada (Semana 11) para corregir los 8 bugs altos pendientes y cumplir el objetivo de < 5.</p>
+                <p style="margin-top: 0.5rem;"><strong>Costo estimado:</strong> $2M | <strong>Responsable:</strong> Líder de QA</p>
+            </div>
+        </section>
+
+        <!-- Acciones Correctivas -->
+        <div class="info-box" style="margin-top: 3rem;">
+            <h3>🚀 Acciones Correctivas - Próximas 4 Semanas</h3>
+            <ol style="margin-left: 1.5rem; line-height: 2;">
+                <li><strong>🔴 CRÍTICO:</strong> Reunión con Sponsor (decisión Escenario C, change freeze)</li>
+                <li><strong>🔴 CRÍTICO:</strong> Sprint corrección bugs (resolver 8 bugs altos)</li>
+                <li><strong>🔴 CRÍTICO:</strong> Escalar R16 a VP proveedor (APIs nómina)</li>
+                <li><strong>🟡 ALTA:</strong> Agregar 2 desarrolladores Sprint 3 (recuperar 1 semana)</li>
+                <li><strong>🟡 ALTA:</strong> Reuniones 1:1 retención equipo (prevenir R07)</li>
+                <li><strong>🟢 MEDIA:</strong> Generar contenido regionalizado (20 items/país)</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>GPY2202 - Gestión de Proyectos - Experiencia 2</strong></p>
+            <p>Informe del Performance del Trabajo (EVM)</p>
+            <p>Jefe de Proyecto: Sebastian Briceño • Grupo 15</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">DUOC UC - Abril 2026</p>
+        </div>
+    </footer>
+
+    <!-- Barra de Descarga Flotante -->
+    <div class="download-bar" id="downloadBar">
+        <button class="download-bar-close" onclick="document.getElementById('downloadBar').classList.add('hidden')">×</button>
+        <h3><span>📥</span> Descargar Documentos</h3>
+        <div class="download-buttons">
+            <button class="btn-download primary" onclick="descargarInformePerformance()">
+                <span>📈 Informe Performance (Word)</span>
+                <span class="icon">↓</span>
+            </button>
+            <button class="btn-download" onclick="descargarTodosDocumentos()">
+                <span>📦 Todos los Documentos</span>
+                <span class="icon">↓</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/downloads.js"></script>
+    <script>
+        // Gráfico de EVM
+        const evmCtx = document.getElementById('evmChart').getContext('2d');
+        new Chart(evmCtx, {
+            type: 'line',
+            data: {
+                labels: ['Inicio', 'Sem 2', 'Sem 4', 'Sem 6', 'Sem 8', 'Sem 10', 'Sem 12', 'Sem 14', 'Sem 16', 'Sem 18', 'Sem 20', 'Sem 22'],
+                datasets: [
+                    {
+                        label: 'PV (Planned Value)',
+                        data: [0, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 100],
+                        borderColor: '#667eea',
+                        borderDash: [5, 5],
+                        backgroundColor: 'transparent',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'EV (Earned Value)',
+                        data: [0, 10, 20, 29, 38, 48, 58, 67, 76, 85, 92, 100],
+                        borderColor: '#10b981',
+                        backgroundColor: 'transparent',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'AC (Actual Cost)',
+                        data: [0, 10, 19, 28, 38, 48, 60, 72, 84, 96, 105, 115],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'transparent',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'BAC (Budget at Completion)',
+                        data: [0, 0, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100],
+                        borderColor: '#000000',
+                        borderDash: [10, 5],
+                        backgroundColor: 'transparent',
+                        pointRadius: 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Gráfico de Earned Value Management (EVM)',
+                        font: { size: 16, weight: 'bold' }
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Costo (Millones CLP)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'M';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Semanas del Proyecto'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Presupuesto
+        const budgetCtx = document.getElementById('budgetChart').getContext('2d');
+        new Chart(budgetCtx, {
+            type: 'bar',
+            data: {
+                labels: ['RRHH Interno', 'Consultores', 'Infraestructura', 'Licencias', 'Capacitación', 'Contingencia'],
+                datasets: [
+                    {
+                        label: 'Presupuestado',
+                        data: [30, 5, 15, 10, 8, 13],
+                        backgroundColor: '#667eea'
+                    },
+                    {
+                        label: 'Gastado',
+                        data: [28, 12, 4, 3, 0, 3.5],
+                        backgroundColor: '#10b981'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Presupuesto por Categoría (Millones CLP)',
+                        font: { size: 16, weight: 'bold' }
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Millones CLP'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Animación de barras de progreso
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const progressBars = document.querySelectorAll('.progress-bar');
+                progressBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }, 200);
+        });
+    </script>
+</body>
+</html>

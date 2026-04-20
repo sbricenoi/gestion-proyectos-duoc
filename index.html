@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proyectos - DUOC UC | Sebastian Briceño</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e5e7eb;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .badge.green {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge.blue {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC">
+            </div>
+            <h1>Gestión de Proyectos</h1>
+            <p class="subtitle">GPY2202 - Portafolio de Experiencias | Grupo 15</p>
+        </div>
+
+        <div class="cards">
+            <!-- Semana 3 -->
+            <a href="semana3/index.html" class="card">
+                <div class="card-icon">📊</div>
+                <h2 class="card-title">Semana 3</h2>
+                <h3 style="color: #667eea; margin-bottom: 1rem;">EDT & Estructura del Proyecto</h3>
+                <p class="card-description">
+                    Estructura de Desglose de Trabajo (EDT) del proyecto Intranet Corporativa 2.0 para Konecta. 
+                    Incluye diagrama WBS, cronograma Gantt, presupuesto y plan de recursos.
+                </p>
+                <div class="badge blue">Experiencia 1</div>
+                <div class="card-meta">
+                    <span>🗓️ Febrero 2026</span>
+                    <span>📄 5 documentos</span>
+                </div>
+            </a>
+
+            <!-- Semana 6 -->
+            <a href="semana6/index.html" class="card">
+                <div class="card-icon">⚠️</div>
+                <h2 class="card-title">Semana 6</h2>
+                <h3 style="color: #667eea; margin-bottom: 1rem;">Gestión de Riesgos & Performance</h3>
+                <p class="card-description">
+                    Análisis completo de gestión de riesgos, monitoreo, Earned Value Management (EVM) y 
+                    control de cambios al 45% de la ejecución del proyecto.
+                </p>
+                <div class="badge green">Experiencia 2</div>
+                <div class="card-meta">
+                    <span>🗓️ Junio 2026</span>
+                    <span>📊 15 riesgos, 7 cambios</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p><strong>Proyecto:</strong> Intranet Corporativa 2.0 - Konecta</p>
+            <p><strong>Estudiante:</strong> Sebastian Briceño • Grupo 15</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                DUOC UC - Gestión de Proyectos • Abril 2026
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Animación de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s, transform 0.6s';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

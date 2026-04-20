@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz de Riesgos - Intranet Konecta | Grupo 15</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Librerías para generar archivos Office -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1280px-Logo_DuocUC.svg.png" alt="Duoc UC" class="logo-img">
+                <span class="logo-text">Gestión de Proyectos</span>
+            </a>
+            <div class="project-info">
+                <div class="project-title">GPY2202 - Semana 6 (Experiencia 2)</div>
+                <div class="project-meta">Grupo 15 • Sebastian Briceño</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link">🏠 Inicio</a>
+            <a href="riesgos.html" class="nav-link active">⚠️ Matriz de Riesgos</a>
+            <a href="monitoreo.html" class="nav-link">📊 Monitoreo</a>
+            <a href="performance.html" class="nav-link">📈 Performance (EVM)</a>
+            <a href="cambios.html" class="nav-link">🔄 Solicitudes de Cambio</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">⚠️ Matriz de Identificación y Evaluación Cualitativa de Riesgos</h1>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">Proyecto: Intranet Corporativa 2.0 - Konecta | Fecha: 20 de Abril de 2026</p>
+
+        <!-- Resumen -->
+        <div class="success-box">
+            <h3>📊 Resumen de Riesgos Identificados</h3>
+            <p><strong>Total de Riesgos:</strong> 15 riesgos documentados</p>
+            <p><strong>Exposición Monetaria:</strong> $52M (52% del presupuesto)</p>
+            <p><strong>Categorías:</strong> Técnico (40%), Organizacional (33%), Gestión (20%), Externo (7%)</p>
+        </div>
+
+        <!-- Escalas -->
+        <section class="section">
+            <h2 class="section-title">📏 Escalas de Evaluación</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 2rem;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Valor</th>
+                                <th>Probabilidad</th>
+                                <th>Rango</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5</td><td>Muy Alta</td><td>71% - 100%</td></tr>
+                            <tr><td>4</td><td>Alta</td><td>51% - 70%</td></tr>
+                            <tr><td>3</td><td>Media</td><td>31% - 50%</td></tr>
+                            <tr><td>2</td><td>Baja</td><td>11% - 30%</td></tr>
+                            <tr><td>1</td><td>Muy Baja</td><td>0% - 10%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Valor</th>
+                                <th>Impacto</th>
+                                <th>En Cronograma</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5</td><td>Muy Alto</td><td>> 6 semanas</td></tr>
+                            <tr><td>4</td><td>Alto</td><td>4-6 semanas</td></tr>
+                            <tr><td>3</td><td>Medio</td><td>2-4 semanas</td></tr>
+                            <tr><td>2</td><td>Bajo</td><td>1-2 semanas</td></tr>
+                            <tr><td>1</td><td>Muy Bajo</td><td>< 1 semana</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Riesgos Altos -->
+        <section class="section">
+            <h2 class="section-title">🔴 Riesgos de Nivel Alto (Acción Inmediata Requerida)</h2>
+
+            <!-- R01 -->
+            <div class="danger-box">
+                <h3>R01: Complejidad de Integración con Sistemas Legacy</h3>
+                <p style="margin: 0.5rem 0;"><strong>Categoría:</strong> Técnico | <strong>Nivel:</strong> 16 - Alto 🔴 | <strong>Estado:</strong> MATERIALIZADO</p>
+                <p style="margin: 1rem 0;"><strong>Descripción:</strong> Las integraciones con Active Directory, sistema de RRHH y sistema de nómina presentan mayor complejidad técnica de la estimada debido a APIs obsoletas, falta de documentación y diferentes estándares en cada sistema.</p>
+                <p><strong>Probabilidad:</strong> 4 - Alta (60%) | <strong>Impacto:</strong> 4 - Alto</p>
+                <p style="margin: 1rem 0;"><strong>Plan de Respuesta:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Iniciar análisis técnico en Semana 2 (anticipado)</li>
+                    <li>Asignar desarrollador senior más experimentado</li>
+                    <li>Contratar consultor externo especializado (1 mes) - EJECUTADO ✓</li>
+                    <li>Plan B: Interfaces de carga manual temporal - EN DESARROLLO</li>
+                </ul>
+                <p><strong>Responsable:</strong> Líder Técnico | <strong>Revisión:</strong> Semanal</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: #991b1b;">IMPACTO REAL: +$3.5M, +1.5 semanas</p>
+            </div>
+
+            <!-- R02 -->
+            <div class="danger-box">
+                <h3>R02: Resistencia al Cambio en Sucursales Internacionales</h3>
+                <p style="margin: 0.5rem 0;"><strong>Categoría:</strong> Organizacional | <strong>Nivel:</strong> 16 - Alto 🔴 | <strong>Estado:</strong> EN MITIGACIÓN</p>
+                <p style="margin: 1rem 0;"><strong>Descripción:</strong> Empleados de Argentina, Brasil y Colombia podrían resistirse a adoptar la nueva intranet por desconfianza, preferencia por procesos actuales o percepción de que es "otro proyecto chileno".</p>
+                <p><strong>Probabilidad:</strong> 4 - Alta (65%) | <strong>Impacto:</strong> 4 - Alto</p>
+                <p style="margin: 1rem 0;"><strong>Plan de Respuesta:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Incluir representantes de cada país en comité desde Semana 1 ✓</li>
+                    <li>Talleres presenciales en cada país ✓</li>
+                    <li>Embajadores del cambio designados (4 personas) ✓</li>
+                    <li>Contenido regionalizado y en idioma local - EN PROGRESO</li>
+                    <li>Gamificación y premios por adopción temprana</li>
+                </ul>
+                <p><strong>Responsable:</strong> Director de RRHH | <strong>Revisión:</strong> Quincenal</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: #059669;">EFECTIVIDAD: 78% aceptación positiva en encuestas ✓</p>
+            </div>
+
+            <!-- R03 -->
+            <div class="danger-box">
+                <h3>R03: Requisitos Ambiguos o Cambiantes Durante el Desarrollo</h3>
+                <p style="margin: 0.5rem 0;"><strong>Categoría:</strong> Gestión | <strong>Nivel:</strong> 16 - Alto 🔴 | <strong>Estado:</strong> ESCALADO ⬆️</p>
+                <p style="margin: 1rem 0;"><strong>Descripción:</strong> Stakeholders solicitan cambios significativos en requisitos a mitad del desarrollo (flujo multi-nivel, cálculo días, módulo encuestas), causando retrabajo y retrasos.</p>
+                <p><strong>Probabilidad:</strong> 4 - Alta (55%) | <strong>Impacto:</strong> 4 - Alto</p>
+                <p style="margin: 1rem 0;"><strong>Plan de Respuesta:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Proceso formal de gestión de cambios con comité ✓</li>
+                    <li>Aprobación firmada de requisitos por stakeholders ✓</li>
+                    <li>Validaciones iterativas con prototipos - EN CURSO</li>
+                    <li>Establecer change freeze desde Semana 12 - PENDIENTE</li>
+                    <li>Reserva de contingencia 13% ($13M) para cambios</li>
+                </ul>
+                <p><strong>Responsable:</strong> Jefe de Proyecto | <strong>Revisión:</strong> Semanal</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: #991b1b;">CAMBIOS APROBADOS: +$10M, +6 semanas impacto</p>
+            </div>
+
+            <!-- R16 -->
+            <div class="danger-box">
+                <h3>R16: Retraso en Entrega de APIs del Sistema de Nómina (NUEVO)</h3>
+                <p style="margin: 0.5rem 0;"><strong>Categoría:</strong> Técnico | <strong>Nivel:</strong> 16 - Alto 🔴 | <strong>Estado:</strong> IDENTIFICADO</p>
+                <p style="margin: 1rem 0;"><strong>Descripción:</strong> Proveedor del sistema de nómina informó que APIs no estarán disponibles hasta Semana 13 (vs. Semana 11 comprometida), retrasando desarrollo de módulo de liquidaciones.</p>
+                <p><strong>Probabilidad:</strong> 4 - Alta (70%) | <strong>Impacto:</strong> 4 - Alto</p>
+                <p style="margin: 1rem 0;"><strong>Plan de Respuesta:</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Reunión urgente con proveedor (VP TI) para escalar - PROGRAMADA</li>
+                    <li>Ofrecer soporte técnico de nuestro lado</li>
+                    <li>Plan B: Desarrollar scraper temporal - INICIADO</li>
+                    <li>Incluir cláusula de penalidad en renovaciones</li>
+                </ul>
+                <p><strong>Responsable:</strong> Director de TI | <strong>Revisión:</strong> Diaria</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: #991b1b;">CRÍTICO: Decisión Go/No-Go en Semana 11</p>
+            </div>
+        </section>
+
+        <!-- Riesgos Medios -->
+        <section class="section">
+            <h2 class="section-title">🟠 Riesgos de Nivel Medio (Desarrollar Plan de Respuesta)</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">ID</th>
+                            <th style="width: 30%;">Riesgo</th>
+                            <th style="width: 15%;">Nivel</th>
+                            <th style="width: 45%;">Plan de Respuesta Clave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>R04</strong></td>
+                            <td>Problemas de Rendimiento con Alta Concurrencia</td>
+                            <td class="risk-medium">12 - Medio 🟠</td>
+                            <td>Pruebas de carga desde Sprint 2 ✓ | Arquitectura escalable | CDN implementado ✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R06</strong></td>
+                            <td>Vulnerabilidades de Seguridad No Detectadas</td>
+                            <td class="risk-medium">10 - Medio 🟠</td>
+                            <td>OWASP Top 10 ✓ | Code review obligatorio ✓ | Auditoría externa Semana 14</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R07</strong></td>
+                            <td>Rotación de Personal Clave del Proyecto</td>
+                            <td class="risk-medium">12 - Medio 🟠</td>
+                            <td>Knowledge sharing ✓ | Pair programming ✓ | Incentivos retención | 1 desarrollador renunció ⚠️</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R10</strong></td>
+                            <td>Baja Adopción Post Go-Live</td>
+                            <td class="risk-medium">12 - Medio 🟠</td>
+                            <td>Único canal para trámites | Gamificación | Capacitación 100% | Soporte extendido</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Riesgos Bajos -->
+        <section class="section">
+            <h2 class="section-title">🟡 Riesgos de Nivel Bajo (Monitorear Activamente)</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">ID</th>
+                            <th style="width: 40%;">Riesgo</th>
+                            <th style="width: 15%;">Nivel</th>
+                            <th style="width: 15%;">Prob</th>
+                            <th style="width: 20%;">Estrategia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>R05</strong></td>
+                            <td>Falta de Disponibilidad de Stakeholders Clave</td>
+                            <td class="risk-low">9 - Bajo 🟡</td>
+                            <td>3 - Media</td>
+                            <td>Mitigar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R08</strong></td>
+                            <td>Cambios Regulatorios en Protección de Datos</td>
+                            <td class="risk-low">6 - Bajo 🟡</td>
+                            <td>2 - Baja</td>
+                            <td>Aceptar y Monitorear</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R11</strong></td>
+                            <td>Sobrecostos por Subestimación de Esfuerzo</td>
+                            <td class="risk-low">9 - Bajo 🟡</td>
+                            <td>3 - Media</td>
+                            <td>Mitigar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R13</strong></td>
+                            <td>Datos Inconsistentes entre Sistemas Legacy</td>
+                            <td class="risk-low">9 - Bajo 🟡</td>
+                            <td>3 - Media</td>
+                            <td>Mitigar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R14</strong></td>
+                            <td>Falta de Contenido Regionalizado al Lanzamiento</td>
+                            <td class="risk-low">9 - Bajo 🟡</td>
+                            <td>3 - Media</td>
+                            <td>Mitigar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R17</strong></td>
+                            <td>Falta Participación Brasil en Validaciones (NUEVO)</td>
+                            <td class="risk-medium">12 - Medio 🟠</td>
+                            <td>3 - Media</td>
+                            <td>Mitigar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Riesgos Muy Bajos -->
+        <section class="section">
+            <h2 class="section-title">🟢 Riesgos de Nivel Muy Bajo (Aceptar y Monitorear)</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">ID</th>
+                            <th style="width: 50%;">Riesgo</th>
+                            <th style="width: 15%;">Nivel</th>
+                            <th style="width: 25%;">Estrategia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>R09</strong></td>
+                            <td>Fallas en Infraestructura Cloud Durante Go-Live</td>
+                            <td class="risk-low">5 - Bajo 🟡</td>
+                            <td>Transferir y Mitigar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R12</strong></td>
+                            <td>Incompatibilidad con Navegadores o Dispositivos Antiguos</td>
+                            <td class="risk-verylow">4 - Muy Bajo 🟢</td>
+                            <td>Aceptar y Mitigar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>R15</strong></td>
+                            <td>Problemas de Conectividad en Sucursales Remotas</td>
+                            <td class="risk-verylow">4 - Muy Bajo 🟢</td>
+                            <td>Mitigar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Distribución por Categoría -->
+        <section class="section">
+            <h2 class="section-title">📊 Distribución por Categoría</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card" style="border-left: 4px solid #3b82f6;">
+                    <div class="metric-label">Técnico (T)</div>
+                    <div class="metric-value" style="color: #3b82f6;">6</div>
+                    <div class="metric-status">40% del total</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #8b5cf6;">
+                    <div class="metric-label">Organizacional (O)</div>
+                    <div class="metric-value" style="color: #8b5cf6;">5</div>
+                    <div class="metric-status">33% del total</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #f59e0b;">
+                    <div class="metric-label">Gestión (G)</div>
+                    <div class="metric-value" style="color: #f59e0b;">3</div>
+                    <div class="metric-status">20% del total</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 4px solid #10b981;">
+                    <div class="metric-label">Externo (E)</div>
+                    <div class="metric-value" style="color: #10b981;">1</div>
+                    <div class="metric-status">7% del total</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recomendaciones -->
+        <div class="warning-box">
+            <h3>💡 Recomendaciones Clave</h3>
+            <ol style="margin-left: 1.5rem; line-height: 2;">
+                <li><strong>Enfoque en Riesgos Altos:</strong> Los 4 riesgos con nivel alto (R01, R02, R03, R16) requieren atención inmediata y ejecución rigurosa de planes de respuesta.</li>
+                <li><strong>Gestión del Cambio Crítica:</strong> 33% de riesgos son organizacionales. Plan robusto de gestión del cambio es fundamental.</li>
+                <li><strong>Integraciones Legacy:</strong> Iniciar análisis técnico en Semana 2 (anticipado) y considerar consultor externo es altamente recomendado.</li>
+                <li><strong>Reserva de Contingencia:</strong> Con 13% ($13M), puede cubrir 1-2 riesgos medios. Monitorear uso semanalmente.</li>
+                <li><strong>Reuniones de Riesgos:</strong> Establecer reuniones semanales de 15 minutos dedicadas a revisar matriz.</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>GPY2202 - Gestión de Proyectos - Experiencia 2</strong></p>
+            <p>Matriz de Identificación y Evaluación Cualitativa de Riesgos</p>
+            <p>Jefe de Proyecto: Sebastian Briceño • Grupo 15</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">DUOC UC - Abril 2026</p>
+        </div>
+    </footer>
+
+    <!-- Barra de Descarga Flotante -->
+    <div class="download-bar" id="downloadBar">
+        <button class="download-bar-close" onclick="document.getElementById('downloadBar').classList.add('hidden')">×</button>
+        <h3><span>📥</span> Descargar Documentos</h3>
+        <div class="download-buttons">
+            <button class="btn-download primary" onclick="descargarMatrizRiesgos()">
+                <span>📊 Matriz de Riesgos (Excel)</span>
+                <span class="icon">↓</span>
+            </button>
+            <button class="btn-download" onclick="descargarTodosDocumentos()">
+                <span>📦 Todos los Documentos</span>
+                <span class="icon">↓</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/downloads.js"></script>
+</body>
+</html>
